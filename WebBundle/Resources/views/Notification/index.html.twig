@@ -20,6 +20,7 @@
                     {% endfor %}
                 </ul>
 
+                {{ web_macro.paginator(paginator) }}
 
                 <div class="panel-heading">
                     <h2> 群通知 </h2>
@@ -44,9 +45,9 @@
                     {% endfor %}
                 </ul>
 
+                {{ web_macro.paginator(paginators) }}
 
 
-                {{ web_macro.paginator(paginator) }}
 
             </div><!-- /panel -->
         </div>

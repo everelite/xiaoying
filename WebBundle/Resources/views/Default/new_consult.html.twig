@@ -1,0 +1,251 @@
+。
+
+
+{# 咨询模块 #}
+
+
+<!--咨询模块-->
+<link href="/files/css/new.css" rel="stylesheet">
+	<section class="consult-box">
+		<div class="container">
+		<!--left-->
+			<div class="consult-box-left pull-left">
+
+				<div class="left-top">
+					<p class="text-warning">
+						<p class="h3 "><strong class="consult-title">留学资讯</strong><small class="pull-right"><a href="http://www.eggelite.com/article/category/liuxuekaoshi" target="_blank" style="color:#333">查看更多</a></small></p>
+					</p>
+				{% for article in articles %}
+					<div class="row" style="">
+					  
+						  <div class="col-md-9 col-md-push-3">
+						  	<h4>
+						  		<a href="http://www.eggelite.com/article/{{ article.id }}" target="_blank" style="color:#000;">
+						  			{{ article.title }}
+						  		</a>
+						  	</h4>
+						  	<h6>
+						  		 发布时间：{{ article.createdTime|date('Y-m-d h:i:s')  }}
+						  	</h6>
+						  </div>
+						  <div class="col-md-3 col-md-pull-9">
+						  		<img style="width:100%;height: 85px;padding-top: 10px;" src="http://www.eggelite.com{{ article.picture }}">
+						  </div>
+					</div>	
+				{% endfor %}
+				</div>
+
+				<div class="left-bottom">
+					<p class="text-warning">
+						<p class="h3"><strong class="consult-title">留学攻略</strong></p>
+					</p>
+					<div class="row">
+						  <div class="col-xs-12 col-sm-6 col-md-6">
+						  	<p class="h6"><strong>[申请攻略]</strong><small class="pull-right"><a href="http://www.eggelite.com/article/category/shenqing">更多</a></small></p>
+						  	<ul>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1656" target="_blank">日本读研最强攻略5.0: 全面解析日本大学院考试</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1657" target="_blank">日本读研集训营大连场：大牛与你面对面分享经验</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1654" target="_blank">日本留学丨不同学历学生申请程序详解</a></p>
+						  	</ul>
+						  </div>
+						  <div class="col-xs-12 col-sm-6 col-md-6">
+						  	<p class="h6"><strong>[学费解析]</strong><small class="pull-right"><a href="http://www.eggelite.com/article">更多</a></small></p>
+						  	<ul>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1652" target="_blank">日本留学丨最新日本留学费用标准</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1653" target="_blank">留学生活丨日本留学一年要花多少钱？</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1651" target="_blank">日日本留学丨人民币升值 日本留学费用降低</a></p>
+						  	</ul>
+						  </div>
+					</div>
+					<div class="row">
+						  <div class="col-xs-12 col-sm-6 col-md-6">
+						  	<p class="h6"><strong>[留学考试]</strong><small class="pull-right"><a href="http://www.eggelite.com/article/category/liuxuekaoshi">更多</a></small></p>
+						  	<ul>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/42" target="_blank">EJU日本留学生考试</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1534" target="_blank">浅析日本留学优势专业及就业前景</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/134" target="_blank">日本留学每月生活费用介绍</a></p>
+						  	</ul>
+						  </div>
+						  <div class="col-xs-12 col-sm-6 col-md-6">
+						  	<p class="h6"><strong>[留考准备]</strong><small class="pull-right"><a href="http://www.eggelite.com/article">更多</a></small></p>
+						  	<ul>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/513" target="_blank">一定要体验的东京七大旅游点</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1027" target="_blank">选校注意！警惕国外的野鸡大学</a></p>
+						  		<p class="h5"><a href="http://www.eggelite.com/article/1284" target="_blank">解读留学日本的十大理由</a></p>
+						  	</ul>
+						  </div>
+					</div>				
+				</div>
+			</div>
+		<!--rihght-->	
+			<div class="consult-box-right pull-right">
+
+				<div class="right-top">
+					<a href="http://teikyo.eggelite.com"><img style="width:100%;" src="/images/teikyou.jpg" style="border:1px solid #dbdbdb"></a>
+				</div>
+
+				<div class="right-center">
+					<p class="h3"><strong class="consult-title">小莺动态</strong><small class="pull-right"><a href="javascript:void;">查看更多</a></small></p>
+					<div class="row" style="">
+					  
+					  <div class="col-md-12">
+					  	<h4><a href="http://www.eggelite.com/article/1657" style="color:#000;" target="_blank">日本读研集训营大连场：大牛与你面对面分享经验</a></h4>
+					  	<h6>
+					  		如果你还是一枚日本留学路上的小白，如果你想知道最新最靠谱的日本读研信息，如果你分不清中介公司说的那些真真假假的信息，更直接点，如果你是一个伸手党想拿日本留学资料。那么我们的日本读研集训营应该是你最好的选择。
+					  	</h6>
+					  </div>
+
+					</div>
+
+					<div class="row" style="">
+					  
+					  <div class="col-md-12">
+					  	<h4><a href="http://www.eggelite.com/article/1658" style="color:#000;" target="_blank">御茶水女子大学简依梦老师社会学进学经验大公开！</a></h4>
+					  	<h6>
+					  		御茶水女子大学社会学修士、小莺出国资深留学顾问、对日本各大学招生要求了如指掌擅长为每一位学员量身定制升学方案
+					  	</h6>
+					  </div>
+
+					</div>
+				</div>
+
+				<div class="right-bottom">
+					<p class="h3 "><strong class="consult-title"><a href="javascript:void();"></a>热门标签</strong></p>
+					<div class="hot-tags">
+						<button class="btn"><a href=" http://www.eggelite.com/article/1659" target="_blank">日本大学申请攻略</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1669" target="_blank">日本大学排名</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1660" target="_blank">日本读研</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1661" target="_blank">日本留学考试</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1662" target="_blank">艺术生日本留学</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1661" target="_blank">日本留学考试攻略</a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1663" target="_blank">日本大学申请条件 </a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1664" target="_blank">日本语言学习 </a></button>
+						<button class="btn"><a href=" http://www.eggelite.com/article/1665" target="_blank">日本留学签证 </a></button>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</section>
+
+<style>
+.consult-box-right .right-bottom .hot-tags button {
+    margin: 3px;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+h6, .h6 {
+    line-height: 1.3;
+}
+
+</style>
+
+<section class="interlocution">
+		<div class="container">
+		<!--left-->
+			<div class="inter-left pull-left">
+				<p class="h3 ">
+					<strong class="inter-title">小莺问答</strong>
+					<!-- <small class="pull-right"><a href="javascript:void;">点击查看更多</a></small> -->
+				</p>
+				<div class="inter-list">
+
+					<div class="row ">
+					  <div class="col-xs-6 col-md-2 ">
+					  	<p class="header">
+					  		<img style="width:40px;height:40px;" src="/images/avatar-1.png">
+					  	</p>
+					  	<p class="name">梦想</p>
+					  	<!-- <a herf="javascript:void;" class="want-ask">我要提问</a> -->
+					  </div>
+					  <div class="col-xs-6 col-md-10 inter-item">
+					  	<p class="questions">
+					  		问: 高中生赴日留学有几种途径？
+					  	</p>
+					  	<p class="answer">
+					  		小莺回答: 三种途径: 1. 参加EJU留考申请大学校内考 2.SGU英语课程直接申请 3.参加日本大学中国区现地考试
+					  	</p>
+					  </div>
+					</div>	
+					
+					<div class="row ">
+					  <div class="col-xs-6 col-md-2 ">
+					  	<p class="header">
+					  		<img style="width:40px;height:40px;" src="/images/avatar-2.png">
+					  	</p>
+					  	<p class="name">天天</p>
+					  	<!-- <a herf="javascript:void;" class="want-ask">我要提问</a> -->
+					  </div>
+					  <div class="col-xs-6 col-md-10 inter-item">
+					  	<p class="questions h4">
+					  		问：日本留学费用大概多少？
+					  	</p>
+					  	<p class="answer h5">
+					  		小莺回答: 国公立大学学费3万人民币，私立大学5万人民币，生活费在日本以你那需要5-8万人民币。
+					  	</p>
+					  </div>
+					</div>
+
+					<div class="row ">
+					  <div class="col-xs-6 col-md-2 ">
+					  	<p class="header">
+					  		<img style="width:40px;height:40px;" src="/images/avatar-4.png">
+					  	</p>
+					  	<p class="name">你好</p>
+					  	<!-- <a herf="javascript:void;" class="want-ask">我要提问</a> -->
+					  </div>
+					  <div class="col-xs-6 col-md-10 inter-item">
+					  	<p class="questions h4">
+					  		问：EJU留考和校内考都考什么，考试难吗？
+					  	</p>
+					  	<p class="answer h5">
+					  		小莺回答: 400分日语,200分数学,200分文综/理综。考试比中国高考简单，复习量不到三分之一。
+					  	</p>
+					  </div>
+					</div>
+
+					<div class="row ">
+					  <div class="col-xs-6 col-md-2 ">
+					  	<p class="header">
+					  		<img style="width:40px;height:40px;" src="/images/avatar-9.png">
+					  	</p>
+					  	<p class="name">哈尼</p>
+					  	<!-- <a herf="javascript:void;" class="want-ask">我要提问</a> -->
+					  </div>
+					  <div class="col-xs-6 col-md-10 inter-item">
+					  	<p class="questions h4">
+					  		问：什么是SGU英语直申课程？
+					  	</p>
+					  	<p class="answer h5">
+					  		参加留考占总体的90%以上，是高中生赴日留学主要方式。SGU英语课程是拿国内高考成绩/SAT成绩/托福成绩直接申请的方式。招生学校和专业少，录取难度稍大。
+					  	</p>
+					  </div>
+					</div>
+				</div>			
+			</div>
+			
+			<div class="inter-right pull-right">
+				<div class="right-top h3">
+					日本名校排行
+				</div>
+				<div class="table-responsive">
+				<table class="ranking-list table table-hover">
+					<tr style="border:none;" >  <th>排名</th> <th>国立(私立)</th> <th>学校名称</th>   </tr>
+
+					<tr>  <td>1</td> <td>国</td> <td><a href="javascript:void;">東京大学</a></td>  </tr>
+					<tr>  <td>2</td> <td>国</td> <td><a href="javascript:void;">東北大学</a></td>  </tr>
+					<tr>  <td>3</td> <td>国</td> <td><a href="javascript:void;">京都大学</a></td>  </tr>
+					<tr>  <td>4</td> <td>国</td> <td><a href="javascript:void;">名古屋大学</a></td>  </tr>
+					<tr>  <td>5</td> <td>国</td> <td><a href="javascript:void;">東京工業大学</a></td>  </tr>
+					<tr>  <td>6</td> <td>国</td> <td><a href="javascript:void;">大阪大学</a></td>  </tr>
+					<tr>  <td>7</td> <td>国</td> <td><a href="javascript:void;">名古屋大学</a></td>  </tr>
+					<tr>  <td>8</td> <td>国</td> <td><a href="javascript:void;">北海道大学</a></td>  </tr>
+					<tr>  <td>9</td> <td>国</td> <td><a href="javascript:void;">筑波大学</a></td>  </tr>
+					<tr>  <td>10</td> <td>私</td> <td><a href="javascript:void;">早稻田大学</a></td>  </tr>
+
+				</table>
+				</div>
+			</div>
+		</div>
+	</section>
+

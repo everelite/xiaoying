@@ -1,0 +1,383 @@
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+{% block full_content %}
+
+<!-- <link href="/files/program/detail/index.css" rel="stylesheet" type="text/css" /> -->
+<link type="text/css" rel="stylesheet" href="/files/program/detail/more.css" />
+<div class="xiangqym" style="height: 300px;">
+  <div class="bd" style="height: 300pxpx; background: url(http://img.lcwcdn.com/u/51images/xiangqingbg2.jpg) no-repeat center;background-size:cover;">
+      <div class="xuanf">
+          <div class="jiaji">
+              <div class="tupyx">
+                  <img src="{{ school.logo_sqr }}" alt="{{ school.name_cn }}" title="{{ school.name_cn }}" />
+              </div>
+              <div class="beishang">
+                  <div class="mcla">
+                      <div class="inmclawarps">
+                          <h1>{{ info.name }}( {{ school.name_jp }} )</h1>
+                          <span>国内排名：{{ school.rank_local }}</span>
+                          <span>世界排名：{{ school.rank_world }}</span>
+                          <p class="wmacy">{{ school.name_en }}</p>
+                      </div>
+                  </div>
+                  <ul class="colspUl" style="margin-top: 0px">
+
+                      <li>学校官网：<a rel="nofollow" href="{{ school.website }}" target="_blank" style="color: #FFF;">{{ school.website }}</a></li>
+                      <li>学校性质：{{ school.xingzhi_name }}</li>
+                      <li>地   址： {{ school.address }}</li>
+                      <li>专业所属：{{ info.suoshu }}</li>
+                      <li>选拔方式：{{ info.xuanba_fangshi }}</li>
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+</div>
+
+    <form method="post" action="" id="form1">
+        <!-- 内容部分 -->
+        <div class="ngxqyx">
+            <!-- 左侧 -->
+            <div class="myleft">
+                <div class="Menuboxd">
+                    <ul class="daonav" style="width: 945px">
+
+                        <li class="frist xzhover">学校介绍</li>
+
+                        <li class="">考试科目</li>
+
+                        <li class="" id="tiaojian">入学条件</li>
+
+                        <li class="">精选成功案例</li>
+
+                        <!-- <li class="">院校排名</li> -->
+
+                    </ul>
+                    <!-- 详情 -->
+                    <div class="tabUl">
+                        <!-- 详情 -->
+
+                        <div class="abcon current dlmain" style="display: block; max-height: 985px; overflow-y: auto; margin-bottom: 10px; position: relative; top: 10px; padding: 10px; border: 1px solid #Ff8000; margin-left: 0px; width: 925px;">
+                            {{ school.description }}
+                        </div>
+
+                        <!-- 专业及课程 -->
+
+                        <div class="abcon">
+                            <!-- 方向 -->
+                            <br />
+                            <br />
+                            <h3>{{ info.kaoshikemu }}</h3>
+
+                        </div>
+
+                        <!-- 入学条件 -->
+
+                        <div class="abcon">
+                            <!-- 本科入学条件 -->
+
+                            <div class="kemutj_i">
+                                <!-- 学历标题 -->
+                                <div class="indeName">
+                                    <span class="indecon indecon8"></span>
+                                    <h3 class="btlal">{{ school.request_doclist|raw }}</h3>
+                                    <h3 class="btlal">{{ school.request_en }}</h3>
+                                    <h3 class="btlal">{{ school.request_lang }}</h3>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- 精选成功案例 -->
+
+                        <div class="abcon">
+
+                        {% for item in case %}
+                            <div class="jingx">
+                                <div class="indeName">
+                                    <span class="indecon indecon11"></span>
+                                    <h2 class="btlal">{{ item.title }} </h2>
+                                </div>
+                                <div class="anlicenter">
+                                    <div class="wmnvfl">
+                                        <div class="tupcf">
+                                            <img src="http://img.lcwcdn.com/u/51images/chengbaobs.png" height="136" width="103" />
+                                        </div>
+                                        <a class="csanniu" target="_blank" href="/case/{{ item.id }}">案例详情</a>
+                                    </div>
+                                    <div class="jmnjefr">
+                                        <div class="yonghnes">
+                                            <div class="stfled">学　　生：</div>
+                                            <div class="ghtfled">{{ item.name }}</div>
+                                        </div>
+                                        <div class="yonghnes">
+                                            <div class="stfled">毕业院校：</div>
+                                            <div class="ghtfled">{{ item.from_univ }}({{ item.from_zhuan }})</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                            <div style="float: right; margin-top: 10px; font-size: 14px; margin-right: 5px;">
+                                <span class="listMoreBtn"><a href="/case" target="_blank">更多>></a></span>
+                            </div>
+                        </div>
+
+                        <!-- 院校排名 -->
+
+                        <!-- <div class="abcon">
+                            <div class="quanqpmla">
+                                <div class="indeName">
+                                    <span class="indecon indecon9"></span>
+                                    <h2 class="btlal">全球大学排名</h2>
+                                </div>
+                                <div class="bangdmc">
+                                    <table class="yxbd" padding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <th class="mclalbd">榜单名称</th>
+                                            <th>榜单时间</th>
+                                            <th class="pmlalba">榜单排名</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2509d.html" title="2018年QS澳大利亚大学排名TOP50" target="_blank">2018年QS澳大利亚大学排名TOP50</a></td>
+                                            <td>2018</td>
+                                            <td class="mibdlal">422</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2386d.html" title="2018年QS世界大学排名综合榜单" target="_blank">2018年QS世界大学排名综合榜单</a></td>
+                                            <td>2018</td>
+                                            <td class="mibdlal">422</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/12f2631d.html" title="2018年泰晤士高等教育世界大学排名完整版" target="_blank">2018年泰晤士高等教育世界大学排名完整版</a></td>
+                                            <td>2018</td>
+                                            <td class="mibdlal">487</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/17f2161d.html" title="2016年USNews世界大学排名" target="_blank">2016年USNews世界大学排名</a></td>
+                                            <td>2016</td>
+                                            <td class="mibdlal">465</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/17f2162d.html" title="2016USNews大洋洲大学排名" target="_blank">2016USNews大洋洲大学排名</a></td>
+                                            <td>2016</td>
+                                            <td class="mibdlal">23</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2365d.html" title="2016年QS世界大学排名（澳大利亚）" target="_blank">2016年QS世界大学排名（澳大利亚）</a></td>
+                                            <td>2016</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/15f2388d.html" title="2016上海交大世界大学学术排名500强【完整版】" target="_blank">2016上海交大世界大学学术排名500强【完整版】</a></td>
+                                            <td>2016</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/4f1848d.html" title="澳大利亚2014大学排名" target="_blank">澳大利亚2014大学排名</a></td>
+                                            <td>2015</td>
+                                            <td class="mibdlal">23</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/4f1849d.html" title="2014澳洲大学排行榜—星级排名" target="_blank">2014澳洲大学排行榜—星级排名</a></td>
+                                            <td>2015</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/4f1851d.html" title="2014年澳洲大学就业率星级排名表" target="_blank">2014年澳洲大学就业率星级排名表</a></td>
+                                            <td>2015</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="quanqpmla">
+                                <div class="indeName">
+                                    <span class="indecon indecon9"></span>
+                                    <h2 class="btlal">特色专业排名</h2>
+                                </div>
+                                <div class="bangdmc">
+                                    <table class="yxbd" padding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <th class="mclalbd">榜单名称</th>
+                                            <th>榜单时间</th>
+                                            <th class="pmlalba">榜单排名</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2392d.html" title="2017年QS世界大学排名之土木工程专业排名" target="_blank">2017年QS世界大学排名之土木工程专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2389d.html" title="2017年QS世界大学排名之电气与电子工程专业排名" target="_blank">2017年QS世界大学排名之电气与电子工程专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2403d.html" title="2017年QS世界大学排名之传播与媒体专业排名" target="_blank">2017年QS世界大学排名之传播与媒体专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">176</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2405d.html" title="2017年QS世界大学排名之艺术与设计专业排名" target="_blank">2017年QS世界大学排名之艺术与设计专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">71</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2390d.html" title="2017年QS世界大学排名之计算机科学与信息系统专业排名" target="_blank">2017年QS世界大学排名之计算机科学与信息系统专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">226</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2409d.html" title="2017年心理学专业的QS世界大学排名榜单" target="_blank">2017年心理学专业的QS世界大学排名榜单</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">266</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2391d.html" title="2017年QS世界大学排名之机械、航空航天与制造工程专业排名" target="_blank">2017年QS世界大学排名之机械、航空航天与制造工程专业排名</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">228</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2422d.html" title="2017年物理与天文专业QS世界大学排名榜单" target="_blank">2017年物理与天文专业QS世界大学排名榜单</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">NA</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2423d.html" title="2017年材料科学专业QS世界大学排名榜单" target="_blank">2017年材料科学专业QS世界大学排名榜单</a></td>
+                                            <td>2017</td>
+                                            <td class="mibdlal">226</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="sjlalbd"><a href="http://www.51liucheng.com/Universityrankings/5f2250d.html" title="2015-2016年QS世界大学排名之艺术设计专业排名（Art & Design）" target="_blank">2015-2016年QS世界大学排名之艺术设计专业排名（Art & Design）</a></td>
+                                            <td>2016</td>
+                                            <td class="mibdlal">73</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            if ($('.daonav li').length == 0) {
+                                $('.daonav').hide();
+                            }
+                            $('.daonav li').click(function (event) {
+                                $(this).attr('class', 'xzhover');
+                                $(this).siblings().attr('class', '');
+
+                                var i = $(this).index();
+
+                                $('.tabUl .abcon').eq(i).show();
+                                $('.tabUl .abcon').eq(i).siblings().hide();
+                            })
+                        }
+
+                        )
+
+                </script>
+                </div>
+            </div>
+            <!-- 右侧 -->
+            <!-- <div class="myright">
+                <div class="mymendrt">
+
+                    <div class="rexbang">
+                        <div class="indeName">
+                            <span class="indecon indecon6"></span>
+                            <h2 class="btlal">可能感兴趣的学校<span>Would You Like</span></h2>
+                        </div>
+                        <div class="titmend titmend2">
+                            <ul class="likexx">
+
+                                <li>
+                                    <p>王子山中学</p>
+                                    <a class="csanniu" target="_blank" title="王子山中学" href="http://au.51liucheng.com/Princes-Hill-Secondary-College-1463/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>墨尔本理工学院</p>
+                                    <a class="csanniu" target="_blank" title="墨尔本理工学院" href="http://au.51liucheng.com/Northern-Melbourne-Institute-of-TAFE-1140/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>博士山学院</p>
+                                    <a class="csanniu" target="_blank" title="博士山学院" href="http://au.51liucheng.com/Box-Hill-Institute-of-TAFE-1141/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>威廉安格力斯学院</p>
+                                    <a class="csanniu" target="_blank" title="威廉安格力斯学院" href="http://au.51liucheng.com/William-Angliss-Institute-of-TAFE-1142/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>戈登技术与继续教育学院</p>
+                                    <a class="csanniu" target="_blank" title="戈登技术与继续教育学院" href="http://au.51liucheng.com/Gordon-Institute-of-TAFE-1143/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>桑瑞西亚技术与继续教育学院</p>
+                                    <a class="csanniu" target="_blank" title="桑瑞西亚技术与继续教育学院" href="http://au.51liucheng.com/Sunraysia-Institute-of-TAFE-1144/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>澳大利亚体育学院</p>
+                                    <a class="csanniu" target="_blank" title="澳大利亚体育学院" href="http://au.51liucheng.com/Australian-College-of-Physical-Education-1145/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>国立戏剧艺术学校</p>
+                                    <a class="csanniu" target="_blank" title="国立戏剧艺术学校" href="http://au.51liucheng.com/National-Institute-of-Dramatic-Art-1146/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>精英教育学院</p>
+                                    <a class="csanniu" target="_blank" title="精英教育学院" href="http://au.51liucheng.com/Top-Education-Institute-1147/">查看院校</a>
+                            </li>
+
+                                <li>
+                                    <p>澳大利亚维多利亚大学</p>
+                                    <a class="csanniu" target="_blank" title="澳大利亚维多利亚大学" href="http://au.51liucheng.com/Victoria-University-1148/">查看院校</a>
+                            </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div> -->
+        </div>
+        <script>
+
+        </script>
+    </form>
+
+</body>
+{% endblock %}

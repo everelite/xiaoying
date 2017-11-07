@@ -1,0 +1,54 @@
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+
+{% block title %}{{ '通知'|trans }} - {{ parent() }}{% endblock %}
+{% set script_controller = 'message/notification-list' %}
+
+{% block content %}
+    <div class="row row-8">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default panel-page">
+                <div class="panel-heading">
+                    <h2> {{ '通知'|trans }} </h2>
+                </div>
+
+                <ul class="media-list notification-list">
+                    {% for notification in notifications %}
+                        {% set notification = render_notification(notification) %}
+                        {{ notification.message|raw }}
+                    {% else %}
+                        <li class="empty">{{ '暂无系统通知'|trans }}</li>
+                    {% endfor %}
+                </ul>
+
+
+                <div class="panel-heading">
+                    <h2> 群通知 </h2>
+                </div>
+                <ul class="media-list notification-list">
+                    {% for no in nots %}
+                        <li class="media">
+                          <div class="pull-left">
+                            <span class="glyphicon glyphicon-volume-down media-object"></span>
+                          </div>
+                          <div class="media-body">
+                            <div class="notification-body">
+                              新课程<a href="http://demo.dev/course/{{ no.targetId }}" target="_blank" rel="noreferrer noopener"><strong> {{ no.title }} </strong></a> 已添加。<a href="http://demo.dev/course/{{ no.targetId }}" target="_blank" rel="noreferrer noopener">点击查看</a>
+                            </div>
+                            <div class="notification-footer">
+                             {{ no.createdTime }}
+                            </div>
+                          </div>
+                        </li>
+                    {% else %}
+                        <li class="empty">{{ '暂无群消息通知'|trans }}</li>
+                    {% endfor %}
+                </ul>
+
+
+
+                {{ web_macro.paginator(paginator) }}
+
+            </div><!-- /panel -->
+        </div>
+    </div>
+{% endblock %}

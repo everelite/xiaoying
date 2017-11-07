@@ -1,0 +1,164 @@
+        
+
+<div id='login_js'></div>
+<div id="wrap">
+
+<link type="text/css" href="/files/rank/css/common-pc.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://www.eggelite.com/files/system/2017/04-30/133455fa84f9610398.png" type="image/x-icon">
+<link type="text/css" href="/files/rank/css/library-ranking.css" rel="stylesheet"><link type="text/css" href="/files/rank/css/university-rankings.css" rel="stylesheet">
+
+<!--主题部分-->
+<div class="ranking-container">
+    <!--排名切换栏-->
+    <div class="school-switch-wapper">
+        <div class="school-switch">
+            <ul>
+            {% for cate in cates %}
+                <li class="jm-fl 
+                    {% if id == cate.id %}
+                        active_ran
+                    {% endif %}
+                ">
+                    <a href="/rank/{{ cate.id }}">
+                        <span><i></i>{{ cate.name }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--主体部分-->
+    <div class="ranking-contact">
+        <!--年份筛选-->
+        <div class="vintage-screening">
+            <ul>
+                <li class="jm-fl">
+                    <span>年份:</span>
+                </li>
+                <li class="jm-fl">
+                    <a title="不限" href="javascript:;">
+                        <span class="choose-year active1">不限</span>
+                    </a>
+                </li>
+                <li class="jm-fl">
+                        <a title="2017" href="javascript:;">
+                            <span class="choose-year ">2017</span>
+                        </a>
+                    </li><li class="jm-fl">
+                        <a title="2016" href="javascript:;">
+                            <span class="choose-year ">2016</span>
+                        </a>
+                    </li><li class="jm-fl">
+                        <a title="2015" href="javascript:;">
+                            <span class="choose-year ">2015</span>
+                        </a>
+                    </li><li class="jm-fl">
+                        <a title="2014" href="javascript:;">
+                            <span class="choose-year ">2014</span>
+                        </a>
+                    </li><li class="jm-fl">
+                        <a title="2013" href="javascript:;">
+                            <span class="choose-year ">2013</span>
+                        </a>
+                    </li>            </ul>
+        </div>
+
+
+        <!--详细介绍部分-->
+        <div class="detailed-wapper">
+            <!--左侧选择部分-->
+            <div class="detailed-left jm-fl">
+                <ul>
+                {% for item in cateRank %}
+                    <li>
+                        <a href="/rank/{{ item.id }}">
+                            <!--<a href="http://www.jiemo.net/School/Rank/usa_0_1_1.html">-->
+                            <span title="{{ item.name }}" data-val="{{ item.id }}" class="detail-sp 
+                            {% if( item.id == id ) %}
+                            active2
+                            {% endif %}
+                            ">{{ item.name }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+               </ul>
+            </div>
+            <!--右侧选择部分-->
+            <div class="detailed-right jm-fl">
+
+            {% for rank in ranks %}
+                <div class="detailed-content">
+                    <div class="detailed-content-left jm-fl">
+                        <img src="{{ rank.pic }}">
+                    </div>
+                    <div class="detailed-content-right jm-fl">
+                        <h3>
+                            <a title="{{ rank.name }}({{ rank.year }})" href="/ranklist/{{ rank.id }}" target="_blank">
+                                {{ rank.name }}({{ rank.year }})
+                            </a>
+                        </h3>
+                    </div>
+                </div> 
+            {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    <!--分页-->
+    <div class='pager-container'>
+        <ul class='pager'>
+        {% for i in 1..2 %}
+            <li><a data-value="{{ i }}" href="
+                {% if i == nowpage %}
+                    javascript:void();
+                {% else %}
+                    javascript:changePage({{ i }})
+                {% endif %}
+                ">{{ i }}</a>
+            </li>
+        {% endfor %}
+            <li><a data-value="{{ nowpage+1 }}" href="javascript:changePage({{ nowpage+1 }})">下一页</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/jquery.min_b66ed708.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/bootstrap.min_0d64e131.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/common_2e1819cb.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/ajax_denglu_076db5e7.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/detail_d8d65f34.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/globalMain_683122e8.js"></script>
+<!--twt-start/20151103(开启留学之旅)	-->
+<script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/footer_bar_0b49cf15.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/jquery.cookie_31e1bcc4.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/college-info_61df4fc4.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/jquery.form_eca8a197.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/jquery-simulation_7ac25433.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/jquery-Validation_34fdd1b8.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/jquery-Alert_c16520e2.js"></script><script type="text/javascript" src="http://static.jiemo.net/Common/js/loginNew_a56e97ea.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/Public/Js/bounced_ed41076c.js"></script><!--twt-end/20151103(开启留学之旅)	-->
+
+
+</script>
+
+
+<div style="display:none;">
+
+</div>
+
+
+<div id="college-compare"></div>
+
+
+<script>
+	function autoScroll(obj){  
+        $(obj).find("ul").animate({ marginTop : "-56px"},500,function(){  
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+        })  
+    }  
+    $(function(){  
+        setInterval('autoScroll(".apple")',2000);
+    }) 
+</script>
+
+<script type="text/javascript" src="http://static.jiemo.net/proc/School/rankings/js/swiper.min_0e6a1846.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/rankings/js/all_5ff37158.js"></script><script type="text/javascript" src="http://static.jiemo.net/CDN/echarts/3.4.0/echarts.min_54c88fc6.js"></script><script type="text/javascript" src="http://static.jiemo.net/proc/School/rankings/js/echarts-all_87010402.js"></script>
+<script>
+    function changePage(page){
+        window.location.href = 'http://www.eggelite.com/rank/{{ id }}/'+page+'';
+    }
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay:3000,
+        loop:true,
+        autoplayDisableOnInteraction:false,
+        lazyLoadingInPrevNextAmount:1,
+    });
+</script>

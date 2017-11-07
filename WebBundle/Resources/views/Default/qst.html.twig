@@ -1,0 +1,308 @@
+
+
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+
+{% block header %}
+  {% include 'TopxiaWebBundle:Default:header.html.twig' %}
+
+{% endblock %}
+
+{% block title %}
+SGU/G30/SGU英语项目|Global30|超级G30/SGU|SuperGlobalUniversity|日本读研专家-小莺出国
+
+{% endblock %}
+
+{% block keywords %}
+G30/SGU,G30/SGU英语项目,超级G30/SGU,SGU
+{% endblock %}
+
+{% block description %}
+小莺出国日本读研集训营由东京大学毕业生创立，为大家提供最新最专业的日本读研，日本院生考试，G30/SGU/SGU英语读研申请信息。
+{% endblock %}
+{% block full_content %}
+
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小莺出国日本留学-专注日本留学|日本读研|日本留学考研问题列表</title>         
+<meta name="keyword" content="留学，留学申请，出国留学，日本留学"/>
+<meta name="description" content="小莺出国日本留学-专注日本留学|日本读研|日本留学考研"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link type="text/css" href="/files/ask/css/problem-list.css" rel="stylesheet" media='all'>    
+</head>
+<body>
+<div id="qa-qa">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 second_nav">
+                    <span>您的位置：<a href="/">首页</a><b>&gt;</b><font>
+                    小莺留学问答</font></span>
+                </div>
+                <div class="col-md-12 mainBody">
+                <div class="mainContent">
+                <div class="clearfix"></div>
+                <!--TAB切换开始-->
+                <div class="qusTab">
+                    <a href="#">最新</a>
+                    <a class="active" href="#">推荐</a>
+                </div>
+                <!--TAB切换结束-->
+                <div class="clearfix"></div>
+                <!--列表开始-->
+                <div class="qusList-i">
+                <!--最新-->
+                <div class="qusList">
+                    <!--单条回答开始 最多显示10条  如果没有回答显示小黄人回答-->
+                  {% for item in data %}
+                    <div class="qusText">
+                            <div class="qusLeft">
+                            <img src="/files/ask/images/qa-tour-img01.png" alt="头像">
+                            <span>xiaoying02</span>
+                            <a href="/ask/{{ item.question_id }}" target="_blank">我要提问</a>
+                            </div>
+                            <div class="qusRight">
+                                <div class="clearfix">
+                                <font class="iconQus">问</font>
+                                <h3><a href="problem-detail.html" target="_blank">{{ item.question_content }}</a></h3>
+                                </div>
+                                <div class="clearfix margtop20">
+                                    <font class="iconAns">答</font>
+                                    <span>管理员-小莺</span>
+                                    <i style="display:none;">官方</i>
+                                    <b style="display:none;">推荐答案</b>
+                                    <t >智能</t>
+                                    <p> 
+                                      <a href="problem-detail.html" target="_blank">
+                                      {{ item.answer_content|raw }}
+                                      </a>
+                                    </p>                        
+                                </div>
+                            </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <!--默认的推荐-->
+                <div class="qusList show">
+                    <!--单条回答开始 最多显示10条  如果没有回答显示小黄人回答-->
+                    {% for item in data %}
+                    <div class="qusText">
+                            <div class="qusLeft">
+                            <img src="/files/ask/images/qa-tour-img01.png" alt="头像">
+                            <span>xiaoying02</span>
+                            <a href="/ans/{{ item.question_id }}" target="_blank">我要提问</a>
+                            </div>
+                            <div class="qusRight">
+                                <div class="clearfix">
+                                <font class="iconQus">问</font>
+                                <h3><a href="/ans/{{ item.question_id }}" target="_blank">{{ item.question_content }}</a></h3>
+                                </div>
+                                <div class="clearfix margtop20">
+                                    <font class="iconAns">答</font>
+                                    <span>管理员-小莺</span>
+                                    <i style="display:none;">官方</i>
+                                    <b style="display:none;">推荐答案</b>
+                                    <t >智能</t>
+                                    <p> 
+                                      <a href="/ans/{{ item.question_id }}" target="_blank">
+                                      {{ item.answer_content |raw }}
+                                      </a>
+                                    </p>                        
+                                </div>
+                            </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                </div>
+                <!--列表结束-->
+                <!--翻页部分开始-->
+                <div class="mainPage">
+                    {{ web_macro.paginator(paginator) }}
+                </div>
+                <!--翻页部分结束-->
+            </div>
+            <!--右侧部分开始-->
+            <div class="subContent">                    
+                <div class="news-right-contact">
+                    <div class="inner-tit">
+                        快捷咨询预约
+                    </div>
+                    <div class="inner-list">
+                        <div class="inner-footer">
+                            资深顾问1对1为您免费解答留学问题
+                        </div>
+                        <ul>
+                            <li>
+                                <a data-link='1'><span>电话</span></a>
+                            </li>
+                            <li>
+                                <a data-link='2'><span>微信</span></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="#" rel="nofollow"><span>QQ</span></a>
+                            </li>
+                        </ul>
+                        <i></i>
+                        <em></em>
+                    </div>
+                </div>
+                <div class="news-right-input hidden">
+                    <div class="inner-tab" data-right-tab='1'>
+                        电话
+                    </div>
+                    <div class="inner-tab" data-right-tab='2'>
+                        微信
+                    </div>
+                    <div class="inner-tab">
+                        <a target="_blank" rel="nofollow" href="#">QQ</a>
+                    </div>
+                    <!--输入电话 start-->
+                    <div class="inner-tabarea hidden" data-right-area='1'>
+                        <em>×</em>
+                        <div class="success-area">
+                            您已提交成功！
+                        </div>
+                        <div class="input-txt-area">
+                            <select id="want" class="QuickContact_Country">
+                                <option value="">意向国家</option>
+                                <option value="1">英国</option>
+                                <option value="2">澳大利亚</option>
+                                <option value="4">日本</option>
+                                <option value="239">美国</option>
+                                <option value="2047">韩国</option>
+                                <option value="2227">新西兰</option>
+                                <option value="2228">爱尔兰</option>
+                                <option value="2229">中国香港</option>
+                                <option value="2230">新加坡</option>
+                                <option value="1287">加拿大</option>            
+                            </select>
+                            <input id="tel" name="tel"  type="tel" class="QuickContact_Tel" placeholder="请填写手机号码">
+                        </div>
+                        <font class="inner-error"></font>
+                        <input class="QuickContact_Submit" type="button" value="提交">
+                        <div class="inner-footer">
+                            芥末网资深留学顾问1对1为您免费解答留学问题
+                        </div>
+                    </div>
+                    <!--输入电话 end-->
+                    <!--输入微信 start-->
+                    <div class="inner-tabarea hidden" data-right-area='2'>
+                        <em>×</em>
+                        <div class="success-area">
+                            您已提交成功！
+                        </div>
+                        <div class="weixin-area input-txt-area">
+                            <select id="wantt" class="QuickContact_Country">
+                                <option value="">意向国家</option>
+                                <option value="1">英国</option>
+                                <option value="2">澳大利亚</option>
+                                <option value="4">日本</option>
+                                <option value="239">美国</option>
+                                <option value="2047">韩国</option>
+                                <option value="2227">新西兰</option>
+                                <option value="2228">爱尔兰</option>
+                                <option value="2229">中国香港</option>
+                                <option value="2230">新加坡</option>
+                                <option value="1287">加拿大</option>            
+                            </select>
+                            <input id="wx" name="wx" type="text" class="QuickContact_Weixin" placeholder="请填写微信号">
+                        </div>
+                        <font class="inner-error"></font>
+                        <input class="QuickContact_Submit" type="button" value="提交">
+                        <div class="inner-footer">
+                            芥末网资深留学顾问1对1为您免费解答留学问题
+                        </div>
+                        <div class="news-right-erweima">
+                            <img src="/files/ask/images/wx-ma.jpg">
+                            <p>微信扫码咨询留学大咖</p>
+                        </div>
+                    </div>
+                    <!--输入微信 end-->
+                </div>
+                <div class="ggContent">
+                  <a><img alt='社区问答' src='/files/ask/images/qa-right-img01.png' /></a>
+                </div>
+                <div class="ggContent">
+                    <a><img src="/files/ask/images/qa-right-img02.png" alt="问答页 GPA绩点计算器" /></a>
+                </div>
+                <div class="ggContent">
+                    <a><img src="/files/ask/images/qa-right-img03.png" alt="问答页 美力克日本语学校" /></a>
+                </div>
+                <div class="ggContent">
+                    <a><img src="/files/ask/images/qa-right-img04.jpg" alt="日本语言学校招生手册专题页" /></a>
+                </div>
+                <div class="ggContent">
+                    <a><img src="/files/ask/images/qa-right-img05.jpg" alt="日本语言学校招生官视频专题页" /></a>
+                </div>
+                <!--热门板块开始-->
+                <div class="qusRightList" style="display: none">
+                  <h3>热门板块</h3>
+                    <div class="clearfix margtop20"></div>
+                </div>
+                <!--相关问题列表结束-->
+                </div>           
+            </div>
+            <!--右侧部分结束-->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/files/ask/js/jquery.min.js"></script>
+<script type="text/javascript" src="/files/ask/js/bootstrap.min.js"></script>
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://static.jiemo.net/CDN/html5shiv/3.7.3/html5shiv.min_e790c264.js"></script><script type="text/javascript" src="http://static.jiemo.net/CDN/respond.js/1.4.2/respond.min_b5aba40d.js"></script><![endif]-->
+<script type="text/javascript" src="/files/ask/js/problem-list.js"></script>
+<script type="text/javascript">
+ $(function () {
+    //tab切换
+    $('.qusTab a').click(function() {
+                var i = $(this).index();//下标第一种写法
+                //var i = $('tit').index(this);//下标第二种写法
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.qusList-i .qusList').eq(i).show().siblings().hide();
+    });
+    //ajax提交
+    $(".QuickContact_Submit").bind("click", function () {
+                        var tel = $('#tel').val();
+                        var wx = $('#wx').val();
+                        $.ajax({
+                            url:"",
+                            data:{
+                                'name':name ,
+                                'tel': tel,
+                                'want': want,
+                                'wantt': wantt,
+                                'wx': wx,
+                            },
+                            dataType:'JSON',
+                            type:"POST",
+                            success:function(e)
+                            {
+                                // ['status':true, remark: notice]
+                                if( e.status==false )
+                                {
+                                  alert('提交失败：'+e.remark);
+                                }
+                                else
+                                {
+                                    if( window.confirm('提交成功，请等待老师联系！') )
+                                    {
+                                        alert("提交成功")
+                                    }
+                                }
+                            }
+                        });
+    });
+ });
+</script>
+
+</body>
+</html>
+
+
+
+{% endblock %}

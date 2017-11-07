@@ -1,0 +1,1764 @@
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+
+{% block title %}小莺出国日本留学-专注日本留学|日本读研|研究生top10名校申请{% endblock %}
+{% block keywords %}日本留学,日本读研,日本读研费用,日本留学申请,日本大学排名,日本读研申请{% endblock %}
+{% block description %}小莺出国日本留学专注日本留学考研申请，提供 2017年日本留学申请、日本读研申请等留学指南及互动服务，帮助初中生、高中生、本科生、硕士和研究生（读研|读硕）等同学DIY自主留学，是日本留学的首选培训机构品牌{% endblock %}
+
+{% set appDownload = ( not custom | default(0) ) and ( is_ES_copyright() ) and ( setting("mobile").enabled|default(null) ) %}
+{% if appDownload %}
+  {% set bodyClass = 'homepage  has-app' %}
+{% else %}
+  {% set bodyClass = 'homepage' %}
+{% endif %}
+
+{% set siteNav = '/' %}
+{% set script_controller = 'index' %}
+{% set _target_path = path('homepage') %}
+
+{% set currentTheme = current_theme() %}
+{% set themeConfig = isEditColor|default(false) ? currentTheme.config : currentTheme.confirmConfig %}
+{% set allConfig = currentTheme.allConfig %}
+
+{% set isIndex = true %}
+{% set consultDisplay = true %}
+
+{% block full_content %}
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/files/newindex/css/index.min.css" media="all" />
+<!--banner轮播-->
+<div class="site-banner">
+  <div class="banner-image-wrap flash">
+    <div id="carousel-banner" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+
+        <li data-target="#carousel-banner" data-slide-to="0" class="active"></li>
+
+        <li data-target="#carousel-banner" data-slide-to="1" class=""></li>
+
+        <li data-target="#carousel-banner" data-slide-to="2" class=""></li>
+
+      </ol>
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+          <a href="javascript:void();" onclick="return false;" target="_blank">
+            <img height="524px" src="/files/newindex/images/new-102501.jpg" alt="小莺全球名校前招生官巡回评审完美收官！" rel="nofollow"/></a>
+        </div>
+
+        <div class="item ">
+          <a href="javascript:void();" onclick="return false;" target="_blank">
+            <img height="524px" src="/files/newindex/images/new-102502.jpg" alt="小莺留学—专业、透明、高效" rel="nofollow"/></a>
+        </div>
+
+        <div class="item ">
+          <a href="javascript:void();" onclick="return false;" target="_blank">
+            <img height="524px" src="/files/newindex/images/new-102503.jpg" alt="出国留学案例库_留学成功案例分析_留学案例分享" rel="nofollow"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--banner轮播-->
+  <!--留学方案获取-->
+  <div class="banner-wrap container">
+
+    <div class="abroad">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#fangan" aria-controls="fangan" role="tab" data-toggle="tab">留学方案</a>
+        </li>
+        <li class="split"></li>
+        <li role="presentation"><a href="#mokao" aria-controls="mokao" role="tab" data-toggle="tab">全真模考</a></li>
+        <li class="split"></li>
+        <li role="presentation"><a href="#beijing" aria-controls="beijing" role="tab" data-toggle="tab">背景评估</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="fangan">
+          <div class="dropdown J_dpd">
+             <div class="input-icon">
+
+                          <input style="width: 200px;margin-left: 15px;" id="uname" type="text" class="form-control" name="name" placeholder="姓名">
+                          <p class="spa spa1"></p>
+              </div>
+
+          </div>
+          <div class="dropdown J_dpd">
+             <div class="input-icon">
+
+                          <input style="width: 200px;margin-left: 15px;" id="uphone" type="text" class="form-control" name="tel" placeholder="手机号码" >
+                          <p class="spa spa2"></p>
+             </div>
+
+          </div>
+
+
+
+
+         <div class="dropdown J_dpd">
+            <div id="dLabel3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-text lxfa3">目前学历</span><span class="iconfont icon-dropmenu"></span></div>
+            <span class="error-input">* 请选择目前学历</span>
+            <ul class="dropdown-menu" aria-labelledby="dLabel3">
+              <li>大学本科</li>
+              <li>大学专科</li>
+              <li>高中</li>
+              <li>初中及以下</li>
+              <li>硕士研究生</li>
+              <li class="dp-last">博士研究生</li>
+            </ul>
+          </div>
+          <div class="btn btn-default sub-btn " onclick="ajaxSubmit(this);" style="box-shadow:0 5px #999;">免费获得留学方案</div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="mokao">
+          <div class="dropdown J_dpd">
+             <div class="input-icon">
+
+                          <input style="width: 200px;margin-left: 15px;" id="uname" type="text" class="form-control" name="name" placeholder="姓名">
+                          <p class="spa spa1"></p>
+                     </div>
+
+          </div>
+          <div class="dropdown J_dpd">
+           <div class="input-icon">
+
+                          <input style="width: 200px;margin-left: 15px;" id="uphone" type="text" class="form-control" name="tel" placeholder="手机号码" >
+                          <p class="spa spa2"></p>
+                     </div>
+
+          </div>
+          <div class="dropdown J_dpd">
+            <div id="dLabel33" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-text qzmk3">期望留学时间</span><span class="iconfont icon-dropmenu"></span></div>
+            <span class="error-input">* 请选择期望留学时间</span>
+            <ul class="dropdown-menu" aria-labelledby="dLabel33">
+              <li>2018年</li>
+              <li>2019年</li>
+              <li>2020年及以后</li>
+            </ul>
+          </div>
+          <div class="btn btn-default sub-btn " onclick="ajaxSubmit(this);">免费体验全真模考</div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="beijing">
+          <div class="dropdown J_dpd">
+            <div class="input-icon">
+
+              <input style="width: 200px;margin-left: 15px;" id="uname" type="text" class="form-control" name="name" placeholder="姓名">
+              <p class="spa spa1"></p>
+            </div>
+
+          </div>
+          <div class="dropdown J_dpd">
+           <div class="input-icon">
+
+                          <input style="width: 200px;margin-left: 15px;" id="uphone" type="text" class="form-control" name="tel" placeholder="手机号码" >
+                          <p class="spa spa2"></p>
+                     </div>
+            <ul class="dropdown-menu" aria-labelledby="dLabel222">
+              <li>硕士</li>
+              <li>本科</li>
+              <li>中学</li>
+              <li>博士</li>
+              <li>硕士预科</li>
+              <li class="dp-last">本科预科</li>
+            </ul>
+          </div>
+          <div class="dropdown J_dpd">
+            <div id="dLabel333" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-text bjpg3">目前学历</span><span class="iconfont icon-dropmenu"></span></div>
+            <span class="error-input">* 请选择目前学历</span>
+            <ul class="dropdown-menu" aria-labelledby="dLabel333">
+              <li>大学本科</li>
+              <li>大学专科</li>
+              <li>高中</li>
+              <li>初中及以下</li>
+              <li>硕士研究生</li>
+              <li class="dp-last">博士研究生</li>
+            </ul>
+          </div>
+          <div class="btn btn-default sub-btn " onclick="ajaxSubmit(this);">免费获得背景评估</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--留学方案获取-->
+<!--留学问题-->
+<div class="container s-brand clearfix">
+  <div class="block s-article">
+    <ul class="list-unstyled ul-arc">
+
+      {% for item in qstlists %}
+          <li><a href="javascript:void();">{{ item.title }}</a></li>
+      {% endfor %}
+
+    </ul>
+    <ul class="list-unstyled ul-icon">
+      <li><a href="javascript:void();" onclick="_MEIQIA('showPanel')">
+        <img src="/files/newindex/images/index-icon-img01.png" alt=""/>
+        <span>申请咨询</span>
+      </a></li>
+      <li><a href="/pinggu" data-toggle="modal" data-target="#apply-beijing">
+        <img src="/files/newindex/images/index-icon-img02.png" alt=""/>
+        <span>背景评估</span>
+      </a></li>
+      <li><a href="javascript:void();" onclick="_MEIQIA('showPanel')">
+        <img src="/files/newindex/images/index-icon-img03.png" alt=""/>
+        <span>全真模考</span>
+      </a></li>
+      <li><a href="javascript:void();" onclick="_MEIQIA('showPanel')">
+        <img src="/files/newindex/images/index-icon-img04.png" alt=""/>
+        <span>选校方案</span>
+      </a></li>
+    </ul>
+  </div>
+  <div class="block img ">
+    <div class="mask"><a href="#" target="_blank"></a></div>
+    <a href="#" target="_blank"><img src="/files/newindex/images/youshi1.png" alt=""/></a>
+  </div>
+
+  <div class="block img ">
+    <div class="mask"><a href="#" target="_blank"></a></div>
+    <a href="#" target="_blank"><img src="/files/newindex/images/youshi2.png" alt=""/></a>
+  </div>
+
+  <div class="block img last">
+    <div class="mask"><a href="#" target="_blank"></a></div>
+    <a href="#" target="_blank"><img src="/files/newindex/images/youshi3.png" alt=""/></a>
+  </div>
+
+</div>
+<!--留学问题-->
+
+
+
+<!--留学方案-->
+<div class="container cantab">
+  <div class="can-title">20大留学方案供你选择</div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><span class="J_cicle_span"></span><a href="#ccan1" aria-controls="home" role="tab" data-toggle="tab">日本名校直通车</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan2" aria-controls="profile" role="tab" data-toggle="tab">院生直考</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan3" aria-controls="messages" role="tab" data-toggle="tab">研究生</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan4" aria-controls="settings" role="tab" data-toggle="tab">SGU英语项目</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan5" aria-controls="settings" role="tab" data-toggle="tab">留考校内考</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan6" aria-controls="settings" role="tab" data-toggle="tab">语言学校0中介</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan7" aria-controls="settings" role="tab" data-toggle="tab">艺术生赴日</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#ccan8" aria-controls="settings" role="tab" data-toggle="tab">全部方案</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="ccan1">
+      <img src="/files/newindex/images/fangan1.jpeg" alt=""/>
+      <div class="text">
+        <p class="title">日本名校直通车</p>
+        <p class="s-t1">不读语言学校，日本名校名师国内授课，直达日本大学无需任何中间环节。</p>
+        <a href="/plan/zhitonga"><div class="btn btn-default">立即咨询</div></a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan2">
+      <img src="/files/newindex/images/fangan2.jpeg" alt=""/>
+      <div class="text">
+        <p class="title">院生直考签约</p>
+        <p>行业首创院生直考培训，无需就读研究生(旁听生)或语言学校，国内培训短期签证赴日参加大学院考试直接录取院生。</p>
+        <div class="btn btn-default"><a href="/plan/yuan" target="_blank">马上开始规划 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan3">
+      <img src="/files/newindex/images/index-bg-img06.png" alt=""/>
+      <div class="text">
+        <p class="title">研究生申请</p>
+        <p>日本的研究生实际上是一种旁听生，真正的有学籍身份的硕士叫修士或院生。小莺出国研究生申请保录顶尖日本名校，并制定详细的院生考试辅导方案。
+
+              </p>
+        <div class="btn btn-default"><a href="/plan/yanjiusheng" target="_blank">马上获取方案 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan4">
+      <img src="/files/newindex/images/index-bg-img07.png" alt=""/>
+      <div class="text">
+        <p class="title">SGU英语项目申请</p>
+        <p>日本大学SGU英语项目包含37所顶尖大学，可以从国内递交申请材料直接申请，无需赴日考试无需就读语言学校直接录取顶尖日本名校。</p>
+        <div class="btn btn-default J_gotoModalXuanxiao" ><a href="/plan/sgu">制定选校方案</a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan5">
+      <img src="/files/newindex/images/index-bg-img08.png" alt=""/>
+      <div class="text">
+        <p class="title">留考校内考辅导</p>
+        <p>高中毕业赴日攻读本科必备课程，直接在国内参加EJU日本留学考试专业课程辅导，日本名校名师授课，统一带队到香港参加考试，并直接申请日本大学。</p>
+        <div class="btn btn-default J_gotoModalWenshu" ><a href="/plan/eju">进一步了解 留考班 </a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan6">
+      <img src="/files/newindex/images/index-bg-img09.png" alt=""/>
+      <div class="text">
+        <p class="title">语言学校免费申请</p>
+        <p>小莺出国与日本200多所语言学校建立合作关系，直接申请无需任何中介费用，同时对条件较好的同学赠送5万日元奖学金。</p>
+        <div class="btn btn-default"><a href="/plan/lingzhongjie" target="_blank">进一步了解 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan7">
+      <img src="/files/newindex/images/index-bg-img10.png" alt=""/>
+      <div class="text">
+        <p class="title">艺术生升学</p>
+        <p>小莺出国旗下艺术课程辅导机构-东京美术塾，是东京都历史悠久的日本艺术类大学和专业辅导机构，辅导名校艺术生案例超过200人。</p>
+        <div class="btn btn-default"><a href="" target=/plan/art"_blank">进一步了解 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="ccan8">
+      <img src="/files/newindex/images/index-bg-img11.png" alt=""/>
+      <div class="text">
+        <p class="title">更多留学方案</p>
+        <p class="s-t1">17年日本留学申请辅导经验，为你定制更多个性化方案。</p>
+        <div class="btn btn-default"><a href="/plan" target="_blank">进一步了解 ></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--留学方案-->
+
+<style>
+.plan-nav {margin-bottom:60px;margin-top:-20px;background: #fff;
+padding-top: 49px;
+padding-bottom: 50px;}
+.plan-nav h5 {font-size:18px;margin-bottom:20px;font-weight:600;}
+
+.plan-nav a {color:#333;font-size:14px;margin-bottom:3px;!important}
+.plan-nav p {color:#333;font-size:14px;margin-bottom:3px;!important}
+
+
+.plan-nav {text-align:left;padding-left:100px;}
+</style>
+
+
+<section style="" class="plan-nav">
+<div class="container">
+<div class="row">
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">赴日读本科</h5>
+
+							<a href="/plan/zhitongA"><p>日本名校直通车A</p></a>
+						<a href="/plan/zhitongB"><p>日本大学直通车B</p></a>
+						<a href="/plan/eju_qianghua"><p>EJU留考强化班</p></a>
+						<a href="/plan/art"><p>艺术生赴日留学</p></a>
+						<a href="/plan/sgu_xuebu"><p>SGU学部直申</p></a>
+
+	</div>
+</div>
+
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">赴日读研</h5>
+
+							<a href="/plan/yanjiusheng"><p>研究生旁听生申请</p></a>
+						<a href="/plan/sgu_yuan"><p>SGU修士直申</p></a>
+						<a href="/plan/yuan"><p>院生直考培训班</p></a>
+						<a href="/plan/yanjiujihua"><p>研究计划书辅导</p></a>
+						<a href="/plan/diy"><p>DIY读研申请</p></a>
+
+	</div>
+</div>
+
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">SGU/G30申请</h5>
+
+							<a href="/plan/sgu_xuebu"><p>SGU学部直申</p></a>
+						<a href="/plan/sgu_yuan"><p>SGU修士直申</p></a>
+						<a href="/plan/yingyu"><p>托福托业辅导</p></a>
+						<a href="/plan/zailiu"><p>在留资格申请</p></a>
+
+	</div>
+</div>
+
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">专升本/专升硕</h5>
+
+							<a href="/plan/zhuanshengben"><p>名校专升本</p></a>
+						<a href="/plan/zhuanshengshuo"><p>名校专升硕</p></a>
+						<a href="/plan/xiandikaoshi"><p>中国现地考试</p></a>
+						<a href="/plan/zigeshencha"><p>资格审查服务</p></a>
+
+	</div>
+</div>
+
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">语言学校申请</h5>
+
+							<a href="/plan/japanese"><p>日语培训</p></a>
+						<a href="/plan/kouyu"><p>外教口语培训</p></a>
+						<a href="/plan/lingzhongjie"><p>语言学校免费直招</p></a>
+						<a href="/plan/jiangxuejin"><p>奖学金项目</p></a>
+
+	</div>
+</div>
+
+
+
+
+<div class="col-md-2 col-lg-2 col-xs-4 plan-menu-container" style="">
+	<div class="plan-menu-container-list">
+		<h5 style="">高中/专门学校</h5>
+
+							<a href="/plan/gaozhong"><p>日本高中申请</p></a>
+						<a href="/plan/zhuanmen"><p>专门学校申请</p></a>
+						<a href="/plan/duanda"><p>短期大学申请</p></a>
+						<a href="/plan/bieke"><p>大学别科申请</p></a>
+
+	</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+</section>
+
+<!--录取案例-->
+<div class="container map">
+  <div class="title"><span>17年</span>700多所</span>日本大学和学院<span>9654个</span>真实成功录取案例</div>
+  <div class="more"><a href="/case" target="_blank">进一步了解 小莺出国录取案例 ></a></div>
+  <div class="map-case clearfix">
+    <div class="map-wrap">
+        <!-- 地图图片 -->
+        <img width="710" height="460" src="/files/newindex/images/index-map.png">
+    </div>
+    <div class="case-wrap J_cases_container">
+      <div class="js-loading" style="width: 100%;line-height: 390px;text-align: center;display: none;">
+        <img src="/files/newindex/images/loading.gif" alt="" style="width:100px;margin:20px;" rel="nofollow"/>
+      </div>
+      <div class="J_cases_wrap">
+
+      <ul class="list-unstyled">
+
+
+      {% for item in caselists %}
+        <li>
+            <a href="/case/{{ item.id }}" target="_blank">
+                <img src="/Public/images/logo/1.png" alt=""/>
+                <div class="content">
+                  <p class="student"><span class="name">{{ item.name }}</span> 成功录取<span class="college">{{ item.univ }}</span> {{ item.college }}</p>
+                  <p class="team"><span>{{ item.score_en }} {{ item.score_en }}</span> <span>    </span>  </p>
+                </div>
+            </a>
+        </li>
+      {% endfor %}
+
+
+        <li class="button-cases"><a href="/case" target="_blank" class="btn btn-default">查看全部案例</a>
+        </li>
+      </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--录取案例-->
+
+
+
+<!--信息咨询-->
+<div class="container cantab">
+  <div class="can-title">小莺出国一站式日本留学服务</div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><span class="J_cicle_span"></span><a href="#can1" aria-controls="home" role="tab" data-toggle="tab">留学咨询</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can2" aria-controls="profile" role="tab" data-toggle="tab">日语培训</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can3" aria-controls="messages" role="tab" data-toggle="tab">外教口语培训</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can4" aria-controls="settings" role="tab" data-toggle="tab">选校方案</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can5" aria-controls="settings" role="tab" data-toggle="tab">文书指导</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can6" aria-controls="settings" role="tab" data-toggle="tab">校内考面试指导</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can7" aria-controls="settings" role="tab" data-toggle="tab">签证办理</a></li>
+    <li role="presentation"><span class="J_cicle_span"></span><a href="#can8" aria-controls="settings" role="tab" data-toggle="tab">赴日后续服务</a></li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="can1">
+      <img src="/files/newindex/images/yizhan1.jpg
+      " alt=""/>
+      <div class="text">
+        <p class="title">从留学小白到留学达人</p>
+        <p class="s-t1">小莺出国专业的留学顾问，让赴日留学申请更有效</p>
+         <a href="javascript:void();" onclick="_MEIQIA('showPanel')">
+<div class="btn btn-default ">立即咨询</div></a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can2">
+      <img src="/files/newindex/images/index-bg-img05.png" alt=""/>
+      <div class="text">
+        <p class="title">留学日语培训</p>
+        <p>相对于传统日语教学，小莺出国留学日语课程采用日本大学名师授课，注重应用能力和学术能力。</p>
+        <div class="btn btn-default"><a href="javascript:void();" onclick="_MEIQIA('showPanel')">进一步了解></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can3">
+      <img src="/files/newindex/images/index-bg-img06.png" alt=""/>
+      <div class="text">
+        <p class="title">外教口语</p>
+        <p>为了帮助申请者提高日语口语交流能力，迅速适应日本大学考试面试和学术交流，我们聘请超过百名外教为学员讲授纯正的口语课程。</p>
+        <div class="btn btn-default"><a href="javascript:void();" onclick="_MEIQIA('showPanel')">进一步了解 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can4">
+      <img src="/files/newindex/images/index-bg-img07.png" alt=""/>
+      <div class="text">
+        <p class="title">选校方案</p>
+        <p>信息真假难辨，时间太紧、选择太难、如何搞定专业和学校的选择，如何准备？小莺出国资深留学顾问团队，一键帮你搞定。</p>
+        <a href="javascript:void();" onclick="_MEIQIA('showPanel')"><div class="btn btn-default J_gotoModalXuanxiao" data-toggle="modal" data-target="#apply-fangan">制定选校方案 ></div></a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can5">
+      <img src="/files/newindex/images/index-bg-img08.png" alt=""/>
+      <div class="text">
+        <p class="title">文书指导</p>
+        <p>通过专业的留学文书指导服务，大幅度提高学生的留学申请竞争力，进入到原本难以企及的顶尖名校，实现名校留学梦。</p>
+        <a href="javascript:void();" onclick="_MEIQIA('showPanel')"><div class="btn btn-default J_gotoModalWenshu" data-toggle="modal" data-target="#apply-fangan">进一步了解 ></div></a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can6">
+      <img src="/files/newindex/images/index-bg-img09.png" alt=""/>
+      <div class="text">
+        <p class="title">校内考/面试辅导</p>
+        <p>由具备多年讲课经验，毕业于日本顶尖名校的资深专业课讲师为你辅导日本大学考试面试，大幅提高名校命中率。</p>
+        <div class="btn btn-default"><a href="javascript:void();" onclick="_MEIQIA('showPanel')">进一步了解 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can7">
+      <img src="/files/newindex/images/index-bg-img10.png" alt=""/>
+      <div class="text">
+        <p class="title">签证办理</p>
+        <p>我们这里有具备10年以上行业经验的资深材料老师，辅助学员办理签证材料，做到我万无一失顺利赴日留学。</p>
+        <div class="btn btn-default"><a href="javascript:void();" onclick="_MEIQIA('showPanel')">进一步了解 ></a></div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="can8">
+      <img src="/files/newindex/images/index-bg-img11.png" alt=""/>
+      <div class="text">
+        <p class="title">完善的后续服务</p>
+        <p>赴日接机，安排住宿，打工指导，就职指导等完善的后续服务也是我们的重要竞争力。让每一个学员和家长放心使我们服务的目标。</p>
+        <div class="btn btn-default"><a href="javascript:void();" onclick="_MEIQIA('showPanel')">进一步了解 ></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--信息咨询-->
+
+
+
+<!--讲师介绍-->
+<div class="bgnew">
+  <div class="container stars clearfix">
+    <div class="title">千挑万选汇集业内顶尖顾问和讲师</div>
+    <div class="sbk">
+      <p class="tp">超过百名日本顶尖院校毕业讲师</p>
+      <p>以极低的通过率选拔培养</p>
+     <div class="icon">
+        <img src="/files/newindex/images/index-icon-img07.png" alt=""/>
+      </div>
+    </div>
+    <div class="sbk">
+      <p class="tp">顾问平均从业5年以上 </p>
+      <p>服务200名以上学生的资深顾问</p>
+      <div class="icon">
+        <img src="/files/newindex/images/index-icon-img05.png" alt=""/>
+      </div>
+    </div>
+    <div class="sbk">
+      <p class="tp">日本TOP10名校毕业讲师</p>
+      <p>名师占有率业内领先</p>
+      <div class="icon">
+        <img src="/files/newindex/images/index-icon-img06.png" alt=""/>
+      </div>
+    </div>
+    <div class="sbk" style="margin-right:0;">
+      <p class="tp">卓越的服务态度</p>
+      <p>严格的压力测试和性格测试</p>
+      <div class="icon">
+        <img src="/files/newindex/images/index-icon-img07.png" alt=""/>
+      </div>
+    </div>
+  </div>
+  <div class="container activity">
+    <div class="prev">
+      <img src="/files/newindex/images/index-prew.png" />
+    </div>
+    <div class="next">
+      <img src="/files/newindex/images/index-next.png" />
+    </div>
+    <div class="row">
+      <div class="col-xs-12 activity-wrap">
+        <div class="activity-info">
+          <ul class="list-unstyled clearfix" id="activity-box-list">
+
+          {% for index,item in constantslists %}
+            <li class="{% if index == 4 %}activity-list-last{% endif %}">
+              <a href="/user/{{ item.id }}" target="_blank" title="{{ item.nickname }}">
+                <img src="/files/{{ item.mediumAvatar }}" width="80px" height="80px" alt=""/></a>
+              <span class="con-name">
+                <a href="#" target="_blank">{{ item.nickname }}<br/>
+                  <span>日本顾问</span>
+                </a>
+              </span>
+              <p class="activity-introduction">从业{{ item.year }}年</p>
+              <p class="activity-offers">近期服务案例<span>{{ item.falseNum }}</span>个</p>
+              <span class="activity-btn" data-name="{{ item.nickname }}" data-toggle="modal" onclick="_MEIQIA('showPanel')">预约咨询</span>
+              <!-- <span class="activity-resource-count">已有68人预约Ta</span> -->
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--讲师介绍-->
+<!--留学新闻-->
+<div class="container hot-news">
+  <div class="news-title">日本留学最新攻略</div>
+  <ul class="nav nav-tabs" role="tablist">
+
+    <li role="presentation" class="active"><span class="J_cicle_span"></span><a href="#usaNews" aria-controls="usa" role="tab" data-toggle="tab">日本留学DIY</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#ukNews" aria-controls="uk" role="tab" data-toggle="tab">留考校内考</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#canadaNews" aria-controls="canada" role="tab" data-toggle="tab">研究生申请</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#ausNews" aria-controls="aus" role="tab" data-toggle="tab">SGU/G30申请</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#nzlNews" aria-controls="nzl" role="tab" data-toggle="tab">日语学习/口语提高</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#eurNews" aria-controls="eur" role="tab" data-toggle="tab">日本就职</a></li>
+
+    <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#asiaNews" aria-controls="asia" role="tab" data-toggle="tab">日本生活</a></li>
+
+  </ul>
+  <div class="tab-content">
+
+    <div role="tabpanel clearfix" class="tab-pane active" id="usaNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1658" target="_blank">
+            <img src="/files/article/2017/06-07/1213062e1725108438.jpeg">
+            <p>御茶水女子大学简依梦老师社会学进学经验大公开！</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1653" target="_blank">留学生活丨日本留学一年要花多少钱？</a></li>
+
+          <li><a href="/article/1652" target="_blank">日本留学丨最新日本留学费用标准</a></li>
+
+          <li><a href="/article/1648" target="_blank">日本留学丨日本五大名校留学费用汇总</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[4][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1647" target="_blank">
+            <img src="/files/blog/20170328//58da1e7d16410.jpg">
+            <p>美国本科经济学专业哪些学校好?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1645" target="_blank">日本留学丨不同地区费用解析!</a></li>
+
+          <li><a href="/article/1641" target="_blank">日本留学 | 各类院校费用一览</a></li>
+
+          <li><a href="/article/1640" target="_blank">日本留学丨谁能为你做经济担保？!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[4][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane" id="ukNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1656" target="_blank">
+            <img src="/files/article/2017/05-28/0145233a3f77540358.png">
+            <p>日本读研最强攻略5.0: 全面解析日本大学院考试</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1663" target="_blank">日本留学考试申请条件</a></li>
+
+          <li><a href="/article/1661" target="_blank">日本留学考试</a></li>
+
+          <li><a href="/article/42" target="_blank">留考注意事项与各项留考内容</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[47][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1657" target="_blank">
+            <img src="/files/article/2017/06-07/1022019aa45c414936.jpg">
+            <p>日本读研集训营大连场：大牛与你面对面分享经验?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1664" target="_blank">日本语言学习!</a></li>
+
+          <li><a href="/article/1713" target="_blank">日本留学 EJU留考最全科普贴</a></li>
+
+          <li><a href="/article/1673" target="_blank">日本留考需要做的准备!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[47][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane" id="canadaNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1656" target="_blank">
+            <img src="/files/article/2017/05-28/0145233a3f77540358.png">
+            <p>日本读研最强攻略5.0: 全面解析日本大学院考试</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1663" target="_blank">日本留学考试申请条件</a></li>
+
+          <li><a href="/article/1661" target="_blank">日本留学考试</a></li>
+
+          <li><a href="/article/42" target="_blank">留考注意事项与各项留考内容</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[10][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1660" target="_blank">
+            <img src="/files/article/2017/07-13/10261576dce7295423.png">
+            <p>日本读研?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1660" target="_blank">日本留考需要做的准备!</a></li>
+
+          <li><a href="/article/132" target="_blank">日本留学 为什么日本研究生申请越早越好？</a></li>
+
+          <li><a href="/article/102" target="_blank">留学日本后，你会遇到哪些美好的事情？!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[10][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane" id="ausNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/253" target="_blank">
+            <img src="/files//blog/20160327//56f7959ce4bf5.jpg">
+            <p>不可思议！日本机器人参加东京大学高考模拟</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1677" target="_blank">一篇文章就能带你摸透日本的语言学校</a></li>
+
+          <li><a href="/article/1665" target="_blank">日本留学签证</a></li>
+
+          <li><a href="/article/1720" target="_blank">2017美国各阶段留学费用多少？</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[50][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1714" target="_blank">
+            <img src="/files/article/2017/07-13/1045244be4f2250704.png">
+            <p>日本留学最强攻略: 关于SGU英文项目必须知道的问题集！?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1663" target="_blank">日本留学考试申请条件!</a></li>
+
+          <li><a href="/article/81" target="_blank">日本研究生申请基本要求和条件</a></li>
+
+          <li><a href="/article/86" target="_blank">浅谈日本硕士申请专业选择!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[50][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane" id="nzlNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1685" target="_blank">
+            <img src="/files/default/2017/08-31/142229593302839683.jpg">
+            <p>日本艺术类大学招生信息｜多摩美术大学</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1677" target="_blank">一篇文章就能带你摸透日本的语言学校</a></li>
+
+          <li><a href="/article/1673" target="_blank">日本留考需要做的准备</a></li>
+
+          <li><a href="/article/1664" target="_blank">日本语言学习</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[14][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/" target="_blank">
+            <img src="/files/default/2017/07-20/162756cbd0ac117580.png">
+            <p>美国本科经济学专业哪些学校好?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1625" target="_blank">日本留学生什么时候交学费最好!</a></li>
+
+          <li><a href="/article/1618" target="_blank">2017日本留学费用</a></li>
+
+          <li><a href="/article/1601" target="_blank">赴日留学各阶段大致支出一览!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[14][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div role="tabpanel clearfix" class="tab-pane" id="eurNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1668" target="_blank">
+            <img src="/files/default/2017/07-13/1052535dfd38704705.png">
+            <p>日本留学就业</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1681" target="_blank">小莺出国艺术生课程名校保录班</a></li>
+
+          <li><a href="/article/1615" target="_blank">日本留学费用组成</a></li>
+
+          <li><a href="/article/1599" target="_blank">留学日本住宿费用</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[7][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1678" target="_blank">
+            <img src="/files/default/2017/07-20/162756cbd0ac117580.png">
+            <p>我们究竟为什么去日本留学？ 干货版?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1574" target="_blank">日本留学生活：留学生打工最详攻略!</a></li>
+
+          <li><a href="/article/1572" target="_blank"> 日本学校都有哪些节假日？</a></li>
+
+          <li><a href="/article/1563" target="_blank">手把手教你报名日本大学院考试!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[7][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane" id="asiaNews">
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1563" target="_blank">
+            <img src="/files/default/2017/07-13/103320039e1a171631.png">
+            <p>留学生活丨日本留学一年要花多少钱？</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1627" target="_blank">日本留学生活费用详细清单</a></li>
+
+          <li><a href="/article/1626" target="_blank">去日本东京留学每月生活费用解读</a></li>
+
+          <li><a href="/article/1612" target="_blank">去日本东京留学每月生活费用解读</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <ul class="list-unstyled signle-ul">
+        {% for item in artlists[8][0] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+      <div class="new-bk">
+        <div class="bk-tp">
+          <a href="/article/1633" target="_blank">
+            <img src="/files/default/2017/05-28/014709d57d42164822.jpg">
+            <p>日本留学丨生活费用支出详单?</p>
+          </a>
+        </div>
+        <ul class="list-unstyled">
+
+          <li><a href="/article/1610" target="_blank">日本留学丨学费生活费一览!</a></li>
+
+          <li><a href="/article/1608" target="_blank">日本留学丨赴日留学生活 省钱有绝招</a></li>
+
+          <li><a href="/article/1597" target="_blank">留学生在日本各地区生活费详情!</a></li>
+
+        </ul>
+      </div>
+      <div class="new-bk last-bk">
+        <ul class="list-unstyled signle-ul">
+
+        {% for item in artlists[8][1] %}
+          <li><a href="/article/{{ item.id }}" target="_blank">{{ item.title }}</a></li>
+        {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--留学新闻-->
+<!--院校排名与热门回答-->
+<div class="container college-question">
+  <div class="s-college">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <span class="J_cicle_span"></span><a href="#rankCollege" aria-controls="home" role="tab" data-toggle="tab">日本大学排名</a>
+    </li>
+    <li role="presentation" >
+      <span class="J_cicle_span"></span><a href="#rankLang" aria-controls="home" role="tab" data-toggle="tab">日本语言学校排名</a>
+    </li>
+    <li role="presentation">
+      <span class="J_cicle_span"></span><a href="#hotCollege" aria-controls="profile" role="tab" data-toggle="tab">推荐院校</a>
+    </li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel clearfix" class="tab-pane rank-pane active" id="rankCollege">
+      <ul class="list-unstyled clearfix">
+        <li><a href="/ranklist/13" target="_blank"><img src="/files/newindex/images/index-line-img01.png">
+            <p>日本大学综合排名</p></a>
+        </li>
+        <li><a href="/ranklist/12" target="_blank"><img src="/files/newindex/images/index-line-img02.png"">
+            <p>最受欢迎的日本大学排名</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/3" target="_blank"><img src="/files/newindex/images/index-line-img03.png"">
+            <p>首都圈热门大学排名</p></a>
+        </li>
+        <li><a href="/ranklist/18" target="_blank"><img src="/files/newindex/images/index-line-img04.png"">
+            <p>国公立大学排名</p></a>
+        </li>
+        <li><a href="/ranklist/19" target="_blank"><img src="/files/newindex/images/index-line-img05.png"">
+            <p>私立大学排名</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/20" target="_blank"><img src="/files/newindex/images/index-line-img06.png"">
+            <p>经管类大学综合排名</p></a>
+        </li>
+        <li><a href="/ranklist/21" target="_blank"><img src="/files/newindex/images/index-line-img07.png"">
+            <p>情报理工大学排名</p></a>
+        </li>
+        <li><a href="/ranklist/22" target="_blank"><img src="/files/newindex/images/index-line-img08.png"">
+            <p>社会科学综合排名</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/10" target="_blank"><img src="/files/newindex/images/index-line-img09.png"">
+            <p>艺术类大学综合排名</p></a>
+        </li>
+      </ul>
+    </div>
+
+    <div role="tabpanel clearfix" class="tab-pane rank-pane " id="rankLang">
+      <ul class="list-unstyled clearfix">
+        <li><a href="/ranklist/24" target="_blank"><img src="/files/newindex/images/index-line-img01.png">
+            <p>日本语言学校综合排名</p></a>
+        </li>
+        <li><a href="/ranklist/1" target="_blank"><img src="/files/newindex/images/index-line-img02.png"">
+            <p>最受欢迎的语言学校排名</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/8" target="_blank"><img src="/files/newindex/images/index-line-img03.png"">
+            <p>规模最大的语言学校排名</p></a>
+        </li>
+        <li><a href="/ranklist/4" target="_blank"><img src="/files/newindex/images/index-line-img04.png"">
+            <p>国际化最好的日本语言学校</p></a>
+        </li>
+        <li><a href="/ranklist/5" target="_blank"><img src="/files/newindex/images/index-line-img05.png"">
+            <p>有就业指导的日本语言徐诶奥</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/6" target="_blank"><img src="/files/newindex/images/index-line-img06.png"">
+            <p>有美术指导的语言学校</p></a>
+        </li>
+        <li><a href="/ranklist/7" target="_blank"><img src="/files/newindex/images/index-line-img07.png"">
+            <p>有升学课程的语言学校</p></a>
+        </li>
+        <li><a href="/ranklist/2" target="_blank"><img src="/files/newindex/images/index-line-img08.png"">
+            <p>最便宜的日本语言学校</p></a>
+        </li>
+        <li class="slide-right"><a href="/ranklist/23" target="_blank"><img src="/files/newindex/images/index-line-img09.png"">
+            <p>可以交半年学校的日本语言学校</p></a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane hot-pane" id="hotCollege">
+      <ul class="list-unstyled clearfix">
+
+        <li class=""><a href="/school/1" target="_blank"><img src="/Public/images/logo/1.png">
+            <p class="c-name">东京大学</p>
+            <p class="e-name">University of Tokyo</p></a>
+        </li>
+
+        <li class=""><a href="/school/2" target="_blank"><img src="/Public/images/logo/2.png">
+            <p class="c-name">京都大学</p>
+            <p class="e-name">Kyoto University</p></a>
+        </li>
+
+        <li class="slide-right"><a href="/school/3" target="_blank"><img src="/Public/images/logo/3.png">
+            <p class="c-name">大阪大学</p>
+            <p class="e-name">Osaka University</p></a>
+        </li>
+
+        <li class=""><a href="/school/4" target="_blank"><img src="/Public/images/logo/4.png">
+            <p class="c-name">一桥大学</p>
+            <p class="e-name">Hitotsubashi University</p></a>
+        </li>
+
+        <li class=""><a href="/school/5" target="_blank"><img src="/Public/images/logo/5.png">
+            <p class="c-name">东京工业大学</p>
+            <p class="e-name">Tokyo Institute of Technology</p></a>
+        </li>
+
+        <li class="slide-right"><a href="/school/12" target="_blank"><img src="/Public/images/logo/12.png">
+            <p class="c-name">早稻田大学</p>
+            <p class="e-name">Waseda University</p></a>
+        </li>
+
+        <li class=""><a href="/school/30" target="_blank"><img src="/Public/images/logo/30.png">
+            <p class="c-name">上智大学</p>
+            <p class="e-name">Sophia University</p></a>
+        </li>
+
+        <li class=""><a href="/school/40" target="_blank"><img src="/Public/images/logo/40.png">
+            <p class="c-name">明治大学</p>
+            <p class="e-name">Meiji University</p></a>
+        </li>
+
+        <li class="slide-right"><a href="/school/558" target="_blank"><img src="/Public/images/logo/558.png">
+            <p class="c-name">日本大学</p>
+            <p class="e-name">Nihon University</p></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="s-question">
+    <ul class="nav nav-tabs" role="tablist">
+
+      <li role="presentation" class="active"><span class="J_cicle_span"></span><a href="#hotQuestion" aria-controls="hot" role="tab" data-toggle="tab">热门回答</a></li>
+
+      <li role="presentation" class=""><span class="J_cicle_span"></span><a href="#newQuestion" aria-controls="new" role="tab" data-toggle="tab">最新回答</a></li>
+
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel clearfix" class="tab-pane active J_question_hover2click" id="hotQuestion">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        {% for item in qstanswerlists %}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading1">
+              <h4 class="panel-title">
+                <a data-href="#" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  <img src="/files/newindex/images/smoll-icon-img.png" alt=""/>
+                  {{ item.title }}
+                </a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+              <div class="panel-body">
+                {{ item.content }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+      <div role="tabpanel clearfix" class="tab-pane J_question_hover2click" id="newQuestion">
+        <div class="panel-group" id="accordionabc" role="tablist">
+        {% for item in qstanswerlists %}
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading1">
+              <h4 class="panel-title">
+                <a data-href="#" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  <img src="/files/newindex/images/smoll-icon-img.png" alt=""/>
+                  {{ item.title }}
+                </a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+              <div class="panel-body">
+                {{ item.content }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--院校排名与热门回答-->
+<!--媒体报道与资质荣誉-->
+<div class="media">
+  <div class="container m-wrap">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><span></span><a href="#media1" aria-controls="home" role="tab" data-toggle="tab">媒体报道</a></li>
+      <li role="presentation"><span></span><a href="#media2" aria-controls="messages" role="tab" data-toggle="tab">合作机构</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="media1">
+        <ul class="list-unstyled clearfix">
+          <li><img src="/files/newindex/images/media/m-tencent.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-sina.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-163.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-fg.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/s-sohu.png" alt=""/></li>
+          <li class="m-right"><img src="/files/newindex/images/media/m-forbes.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-36.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-jmt.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-jing.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-cyb.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-duozhi.png" alt=""/></li>
+          <li class="m-right"><img src="/files/newindex/images/media/m-jiazhang.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-renmin.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-xinhua.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-china.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-qingnian.png" alt=""/></li>
+          <li><img src="/files/newindex/images/media/m-jjrb.png" alt=""/></li>
+          <li class="m-right"><img src="/files/newindex/images/media/m-xinjing.png" alt=""/></li>
+        </ul>
+        <p class="m1-title"> </p> <!--进一步了解 社会各界对小莺出国的赞誉 &gt;-->
+      </div>
+      <div role="tabpanel" class="tab-pane" id="media2" style="text-align:center">
+
+
+      <img src="/files/newindex/images/partners.png" style="max-width:800px;margin:auto;margin-bottom:50px;">
+<!--
+        <ul class="list-unstyled clearfix zzry">
+          <li><img src="/files/newindex/images/s-zz1.png" alt=""/>
+          <p>小莺出国留学全资子公司获<br/> 教育部 颁发 留学服务资质证书</p>
+          </li>
+          <li><img src="/files/newindex/images/s-zz2.png" alt=""/>
+          <p>小莺出国留学全资子公司获 公安部 颁发<br/> 因私出入境中介机构经营许可证</p>
+          </li>
+          <li><img src="/files/newindex/images/s-zz3.png" alt=""/>
+          <p>小莺出国留学获 留学服务协会 颁发<br/> 留学示范机构证书</p>
+          </li>
+          <li class="zzry-last"><img src="/files/newindex/images/s-zz4.png" alt=""/>
+          <p>小莺出国留学获 中国教育国际交流协会<br/> 颁发 诚信留学服务机构</p>
+          </li>
+          <li><img src="/files/newindex/images/s-zz5.png" alt=""/>
+          <p>小莺出国留学获 2015年 腾讯 评选<br/> 年度公众信赖留学品牌</p>
+          </li>
+          <li><img src="/files/newindex/images/s-zz6.png" alt=""/>
+          <p>小莺出国留学获 2015年 新浪 评选<br/> 中国品牌影响力教育机构</p>
+          </li>
+          <li><img src="/files/newindex/images/s-zz7.png" alt=""/>
+            <p>小莺出国留学获 中国好教育评 选发<br/> 公众新来留学品牌</p>
+          </li>
+          <li class="zzry-last"><img src="/files/newindex/images/s-zz66.png" alt=""/>
+            <p>小莺出国留学获 中国教育国际交流协会<br/> 颁发 会员证书</p>
+          </li>
+        </ul>
+ -->
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true"></span></button>
+        <div class="title-tips">
+          等。。
+        </div>
+        <div class="to-submit">
+          <div class="modal-phone-errmsg">手机号码输入有误!</div>
+          <div class="input-wrap">
+            <input type="text" id="apply-phone-number" placeholder="输入您的手机号码">
+            <span class="phone-tips"></span>
+          </div>
+          <div class="modal-btn-wrap">
+            <button type="button" class="btn btn-primary submit-abroad-phone">免费获取方案</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade apply-success" id="applyModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="title-tips">
+          留学顾问会在24小时内与你联系 <br/>
+          讲解你的留学方案,请保持手机畅通
+        </div>
+        <div class="to-submit">
+          <div class="modal-btn-wrap">
+            <button type="button" class="btn btn-primary" onclick="javascript:$('#applyModal2').modal('hide');">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-sm" id="apply-reservation" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" style="text-align: center;">
+    <div class="modal-content" style="width:388px;margin-left: 0!important;">
+      <div class="modal-body">
+        <span data-dismiss="modal" class="close">&times;</span>
+        <p>
+          填写基本信息，我们会安排顾问在12小时内回访
+        </p>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="city" id="yuyue-city">
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">四川</option>
+                <option value="4">广东</option>
+                <option value="5">湖北</option>
+                <option value="6">陕西</option>
+                <option value="7">天津</option>
+                <option value="8">河南</option>
+                <option value="9">湖南</option>
+                <option value="10">山东</option>
+                <option value="11">浙江</option>
+                <option value="12">福建</option>
+                <option value="13">重庆</option>
+                <option value="14">江苏</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="yuyue-country">
+                <option>美国</option>
+                <option>韩国</option>
+                <option>法国</option>
+                <option>英国</option>
+                <option>澳洲</option>
+                <option>香港</option>
+                <option>加拿大</option>
+                <option>德国</option>
+                <option>意大利</option>
+                <option>荷兰</option>
+                <option>新加坡</option>
+                <option>澳门</option>
+                <option>日本</option>
+                <option>爱尔兰</option>
+                <option>新西兰</option>
+                <option>马来西亚</option>
+                <option>西班牙</option>
+                <option>俄罗斯</option>
+                <option>丹麦</option>
+                <option>奥地利</option>
+                <option>挪威</option>
+                <option>瑞士</option>
+                <option>瑞典</option>
+                <option>比利时</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <input placeholder="请输入手机号码" class="form-control phono-number" type="text"/>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              <span class="phone-error-text">手机号码输入有误!</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn reservation-submit">提交</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-content-custom" style="width:600px;margin-left: 0!important;">
+      <div class="modal-body">
+        <div class="fork-green">
+          <span class="glyphicon glyphicon-ok-circle"></span>
+        </div>
+        <p>
+          感谢您的提交，小莺出国的顾问将会立即制作您的留学规划方案，并在24小时内与您联系！
+        </p>
+
+        <p>
+          如不想等待，请直接给我们电话
+        </p>
+
+        <div class="phone-container">
+          <span class="glyphicon glyphicon-phone-alt"></span>
+          <a class="modal-number">
+            400-104-6661
+          </a>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="apply-beijing" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" style="text-align: center;">
+    <div class="modal-content" style="width:388px;margin-left: 0!important;">
+      <div class="modal-body">
+        <span data-dismiss="modal" class="close">&times;</span>
+        <p class="m-title">背景评估</p>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="city" id="beijing-country">
+                <option value="申请国家">申请国家</option>
+                <option value="美国">美国</option>
+                <option value="英国">英国</option>
+                <option value="香港">香港</option>
+                <option value="澳新">澳新</option>
+                <option value="加拿大">加拿大</option>
+                <option value="欧洲">欧洲</option>
+                <option value="亚洲">亚洲</option>
+              </select>
+              <span>*清选择申请国家</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="beijing-program">
+                <option>申请项目</option>
+                <option>硕士</option>
+                <option>本科</option>
+                <option>中学</option>
+                <option>博士</option>
+                <option>硕士预科</option>
+                <option>本科预科</option>
+              </select>
+              <span>*清选择申请项目</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="beijing-xueli">
+                <option>目前学历</option>
+                <option>大学本科</option>
+                <option>大学专科</option>
+                <option>高中</option>
+                <option>初中及以下</option>
+                <option>硕士研究生</option>
+                <option>博士研究生</option>
+              </select>
+              <span>*清选择目前学历</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <input placeholder="请输入手机号码" class="form-control phono-number beijing-mobile" type="text"/>
+              <span>*手机号码输入有误</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn beijing-submit">免费获得背景评估</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="apply-mokao" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" style="text-align: center;">
+    <div class="modal-content" style="width:388px;margin-left: 0!important;">
+      <div class="modal-body">
+        <span data-dismiss="modal" class="close">&times;</span>
+        <p class="m-title">全真模考</p>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="city" id="mokao-leibie">
+                <option>考试类别</option>
+                <option>托福</option>
+                <option>雅思</option>
+                <option>SAT</option>
+                <option>SSAT</option>
+              </select>
+              <span>*请选择考试类别</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="mokao-fenshu">
+                <option value="目标分数">目标分数</option>
+              </select>
+              <span>*请选择目标分数</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="mokao-shijian">
+                <option>期望留学时间</option>
+                <option>2018年</option>
+                <option>2019年</option>
+                <option>2020年及以后</option>
+              </select>
+              <span>*清选择期望留学时间</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <input placeholder="请输入手机号码" class="form-control phono-number mokao-mobile" type="text"/>
+              <span>*手机号码输入有误</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn mokao-submit">免费体验全真模考</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="apply-fangan" data-qudao="官网首页/工具/选校方案" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" style="text-align: center;">
+    <div class="modal-content" style="width:388px;margin-left: 0!important;">
+      <div class="modal-body">
+        <span data-dismiss="modal" class="close">&times;</span>
+        <p class="m-title">选校方案</p>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="city" id="fangan-country">
+                <option value="申请国家">申请国家</option>
+                <option value="美国">美国</option>
+                <option value="英国">英国</option>
+                <option value="香港">香港</option>
+                <option value="澳新">澳新</option>
+                <option value="加拿大">加拿大</option>
+                <option value="欧洲">欧洲</option>
+                <option value="亚洲">亚洲</option>
+              </select>
+              <span>*清选择申请国家</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="fangan-program">
+                <option>申请项目</option>
+                <option>硕士</option>
+                <option>本科</option>
+                <option>中学</option>
+                <option>博士</option>
+                <option>硕士预科</option>
+                <option>本科预科</option>
+              </select>
+              <span>*清选择申请项目</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select class="form-control" name="country" id="fangan-xueli">
+                <option>目前学历</option>
+                <option>大学本科</option>
+                <option>大学专科</option>
+                <option>高中</option>
+                <option>初中及以下</option>
+                <option>硕士研究生</option>
+                <option>博士研究生</option>
+              </select>
+              <span>*清选择目前学历</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <input placeholder="请输入手机号码" class="form-control phono-number fangan-mobile" type="text"/>
+              <span>*手机号码输入有误</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn fangan-submit">免费获得背景评估</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/files/newindex/js/index.min.js" charset="UTF-8"></script>
+
+
+  <script>
+
+  /************************  失焦判断  **********************************/
+   $("input").blur(function(){
+        $(".spa").css("color","#BD362F")
+        if($(this).is("#uname")){             //姓名判断
+           var na=/^[\u4E00-\u9FA5]{2,4}$/;
+            if($("#uname").val()!=""){
+                if(!(na.test($("#uname").val()))){
+                    $(".spa1").text("请输入2-4个汉字");
+                    $(this).css("border","1px solid #BD362F")
+                    return false;
+                }else if(na){
+                    $(".spa1").text("");
+                    return true;
+                }
+            }else{
+                $(".spa1").text("");
+            }
+        }
+
+
+        if($(this).is("#uphone")){            //手机号判断
+            var ph=/^1[3|5|7|8|][0-9]{9}$/
+            if($("#uphone").val()!=""){
+            if(!(ph.test($("#uphone").val()))){
+                $(".spa2").text("请输入正确手机号");
+                $(this).css("border","1px solid #BD362F")
+                return false;
+            }else if(ph){
+                $(".spa2").text("");
+                return true;
+            }
+            }else{
+                $(".spa2").text("");
+            }
+        }
+
+
+    })
+
+
+  /********************** 聚焦提示 ************************/
+
+   $("input").focus(function(){
+        if($(this).is("#uname")){
+            $(".spa1").text("2-4个汉字").css("color","#aaa")
+            $(this).css("border","1px solid #aaa")
+        }
+        if($(this).is("#uphone")){
+            $(".spa2").text("11位手机号码").css("color","#aaa")
+            $(this).css("border","1px solid #aaa")
+        }
+
+    })
+
+   /*********************** 提交验证 ***************************/
+
+function ajaxSubmit(a)
+{
+    var na=/^[\u4E00-\u9FA5]{2,4}$/;    //姓名正则
+    var ph=/^1[3|5|7|8|][0-9]{9}$/;     //手机号正则
+
+    var name = $(a).parent().find("input[name=name]");
+    var tel = $(a).parent().find("input[name=tel]");
+    var from = window.location.href;
+    var nameval = $(name).val();
+    var telval = $(tel).val();
+
+    if( !na.test( nameval ) )
+    {
+        $(name).css("border","1px solid #BD362F");$(".spa1").text('请你填写正确的姓名');
+        return false;
+    }
+    if( !ph.test(telval) )
+    {
+        $(tel).css("border","1px solid #BD362F");$(".spa2").text('请你填写正确的电话');
+        return false;
+    }
+    $(a).prop("onclick",null).off("click");
+
+    $.ajax({
+            url:"/ajaxindex",
+            data:{
+                'name'  : nameval ,
+                'tel'   : telval,
+                'from'  : from
+            },
+            dataType:'JSON',
+            type:"POST",
+            success:function(e)
+            {
+                // ['status':true, remark: notice]
+                if( e.status==true )
+                {
+                    alert('提交成功，请等待老师联系！');
+                    $(a).removeAttr('onclick');
+                }
+                else
+                {
+                    alert('提交失败：'+e.remark);
+                }
+            }
+      })
+}
+
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,181 @@
+{% extends 'TopxiaWebBundle::layout.html.twig' %}
+{% block full_content %}
+
+
+
+<link rel="stylesheet" href="/files/program/css/global.css">
+<link rel="stylesheet" href="/files/program/css/index.css">
+<div class="main-container">
+
+<div class="content clearfix" id="topposition">
+<!-- 左侧专业开始 -->
+
+<aside>
+    <div class="left-nav">
+      <h4 class="title">日本官方专业排名资料</h4>
+      <ul class="main-nav clearfix">
+      {% for item in aside %}
+        <li>
+          <div class="classify">
+            <h2 style="background-image:url('/files/program/img/20170428045516853.png')">{{ item.0.university }}</h2>
+            <i></i>
+          </div>
+          <div class="wrap">
+            <ul class="sub-nav">
+            {% for v in item %}
+              <li><a href="/program/{{ v.id }}" target="_blank"><i>&#8226;</i>{{ v.name }}({{ v.suoshu }})</a></li>
+            {% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <!-- <div class="ad-nav">
+      <img src="//s2.51offer.com/51offer/2017-06-30/article-england.png" alt="">
+    </div> -->
+</aside>
+<!-- 左侧专业结束 -->
+<!-- 筛选以及结果开始 -->
+<section>
+    <div class="section-wrap">
+      <div class="filter">
+        <h3 class="title">日本专业搜索<a href="/program" class="right" id="clearall">清空搜索条件</a>
+        </h3>
+        <ul>
+          <li>
+            <dl>
+              <dt>搜索专业：</dt>
+              <dd class="major-input">
+                <div class="input">
+                  <input type="text" value="{% if tj.program is defined %}{{ tj.program }}{% endif %}" placeholder="请输入专业中文名或者英文名">
+                </div>
+                <div class="major-list"></div>
+                <button class="button" onclick="search($(this),'input','/program?program=')" ></button>
+              </dd>
+            </dl>
+          </li>
+          <li class="canclick">
+            <dl>
+              <dt>学&nbsp;&nbsp;历：</dt>
+              <dd class="all active">
+                <a href="" >全部</a>
+              </dd>
+            {% for item in edus %}
+              <dd class="{% if tj.edu_id is defined and tj.edu_id == item.id %}active{% endif %}"><a href="/program?edu_id={{ item.id }}" >{{ item.type_name }}</a></dd>
+            {% endfor %}
+            </dl>
+          </li>
+          <li class="canclick direction">
+            <dl>
+              <dt>专业方向：</dt>
+              <dd class="all active">
+                <a href="">全部</a>
+              </dd>
+            {% for item in tags %}
+              <dd class="{% if tj.tag_id is defined and tj.tag_id == item.id %}active{% endif %}"><a href="/program?tag_id={{ item.id }}">{{ item.tagname }}</a></dd>
+            {% endfor %}
+              <dd class="switch">展开</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>搜索学校：</dt>
+              <dd class="school-input">
+                <div class="input">
+                  <input type="text" value="{% if tj.school is defined %}{{ tj.school }}{% endif %}" placeholder="请输入学校中文或英文">
+                </div>
+                <div class="school-list"></div>
+                <button class="button" onclick="search($(this),'input','/program?school=')"></button>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      <div class="school-des">
+        <div class="head">
+          <!-- <ul class="main-rank">
+            <li>
+              <a href="major-uk-1.html?rankType=apply_count" onclick="log( 'send', 'click', 'professional_center', 'ranktype', 'show');">按热门排序<i></i>
+              </a>
+              <ul class="sub-rank">
+                <li>
+                  <a href="major-uk-1.html?isOrder=this_times&rankType=this_times" onclick="log( 'send', 'click', 'professional_center', 'ranktype', 'TIMES');">按TIMES排序</a>
+                </li>
+                <li>
+                  <a ref="major-uk-.html?isOrder=this_qs&rankTypethis_qs" onclick="log( 'send', 'click', 'professional_center', 'ranktype', 'QS');">按QS排序</a>
+                </li>
+              </ul>
+            </li>
+          </ul> -->
+          <h2 class="title">共有<i>{{ schoolcount }}</i>个学校<i>{{ programcount }}</i>个专业符合条件</h2>
+
+        </div>
+    {% for item in lists %}
+        <article>
+          <div class="top-info">
+            <a href="/school/{{ item.info.comid }}" class="logo" target="_blank">
+              <img src="{{ item.info.logo }}" alt="">
+            </a>
+            <h2>
+              <a href="" target="_blank">{{ item.info.schoolname }}</a>
+            </h2>
+            <p>国内<i>排名：{{ item.info.ranklocal }}</i>
+              <i>国际排名：{{ item.info.rankworld }}</i>
+              <a href="/program_list/{{ item.info.comid }}" target="_blank">查看所有专业</a>
+            </p>
+          </div>
+          <span>该学校共有{{ item.info.count }}个符合条件的相关专业</span>
+          <div class="majors">
+            <ul>
+            {% for k,v in item if k != 'info' and k < 3 %}
+              <li>
+                <h5>·
+                    <a href="/program/{{ v.id }}" target="_blank" >{{ v.name }}({{ v.name_cn }})</a>
+                </h5>
+                <p> 专业所属：{{ v.suoshu }}</p>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+          <a class="major-more" href="/program_list/{{ item.info.comid }}">查看所有专业</a>
+        </article>
+    {% endfor %}
+      </div>
+    </div>
+</section>
+<!-- 筛选以及结果结束 -->
+</div>
+</div>
+<script type="text/javascript" src="files/program/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+function search(x,y,url)
+{
+        if(x.parent().find(y).val()!="")
+        {
+            var config = x.parent().find(y).val();
+            location.href=url+config;
+        }
+
+}
+
+function left_nav(x,y,z,w,q,n)
+    {
+        x.click(function()
+        {
+            if($(this).parent().find(y).is(z))
+            {
+                $(this).find(w).addClass(q)
+                $(this).parent().find(y).fadeIn(n)
+            }
+            else
+            {
+                $(this).parent().find(y).fadeOut(n)
+                $(this).find(w).removeClass(q)
+            }
+
+        })
+    }
+    left_nav($(".classify"),".wrap",":hidden","i","open",200);
+</script>
+{% endblock %}

@@ -1,0 +1,687 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" charset="utf-8">
+	<title>小莺出国【日本留学】</title>
+	<meta name="Keywords" content="日语培训,日语培训中心,日语学习,日语学习,学日语,日语能力考,日语学校,日语考试,日语口语,日本留学" />
+	<meta name="Description" content="独创多媒体课件、全外教阵容、日式小班环境、自由定课、随到随学、日本文化拓展、中国人学日语的全新解决方案" />
+	<meta content="{{ csrf_token('site') }}" name="csrf-token" />
+
+	<script src="/files/jquery-2.1.1.min.js"></script>
+
+	<style>
+		body {
+			padding: 0px;
+			margin: 0px;
+			background-color: #fff;
+		}
+
+		ul {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+		}
+
+		ul li {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+
+		input,
+		textarea,
+		select {
+			cursor: pointer;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		img {
+			border: 0px;
+			vertical-align: bottom;
+		}
+
+		.posfloatl {
+			float: left;
+		}
+
+		.posfloatr {
+			float: right;
+			line-height: 30px;
+		}
+
+		.posclear {
+			clear: both;
+		}
+
+		.main {
+			width: 1350px;
+			margin: 0 auto;
+		}
+
+		.form_class {
+			font-size: 18px;
+			line-height: 40px;
+			color: #333;
+			font-weight: bold;
+		}
+
+		.msgInfo {
+			font-size: 18px;
+			margin-top: 20px;
+			margin-left: 20px;
+			line-height: 40px;
+		}
+
+		.white_content11 {
+			display: none;
+			position: absolute;
+			top: 20%;
+			left: 27%;
+			width: 360px;
+			height: 280px;
+			padding: 16px;
+			border: 1px solid #FFF;
+			background: url(../images/tc_03.gif) repeat-x top;
+			z-index: 1002;
+			overflow: auto;
+		}
+
+		.wbk {
+			width: 130px;
+			background: #FFF;
+			border: #c0c0c0 1px solid;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.black_overlay {
+			display: none;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			z-index: 1000;
+			-moz-opacity: 0.8;
+			opacity: .2;
+			filter: alpha(opacity=20);
+		}
+
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.bgcl {
+			width: 190px;
+			height: 32px;
+			text-indent: 5px;
+			font-size: 18px;
+			border: #ccc 1px solid;
+		}
+
+		.btn {
+			background: url(http://liuxue.sakurajp.com.cn/free/images/2016lxz_btn.png) no-repeat;
+			width: 202px;
+			height: 50px;
+			border: 0px;
+			margin-left: 30px;
+		}
+
+		.zt01 {
+			font-size: 20px;
+			text-align: left;
+		}
+
+		.introduction_title {
+			text-align: center;
+			font-size: 30px;
+			padding-bottom: 30px;
+		}
+
+		#address li {
+			float: left;
+			width: 135px;
+			text-align: center;
+			line-height: 50px;
+			border: 1px solid #000;
+			margin: 5px;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+
+		#address li div {
+			display: none;
+			color: red;
+		}
+
+		#address li span {
+			font-size: 14px;
+		}
+		/*#btn{
+			animation: discount 3s infinite;
+		}
+		@keyframes discount {
+			0%{-webkit-transform: scale(1);transform:scale(1);}
+			50%{-webkit-transform: scale(0.8);transform:scale(0.8);}
+			100%{-webkit-transform: scale(1);transform:scale(1);}
+		}*/
+	</style>
+
+</head>
+
+
+<body>
+	<div style="width:1000px; margin:0 auto; height:110px;cursor: pointer;">
+		<div class="posfloatl"><a href="javascript:;"><img style="width:246px;height:110px;" src="/files/newzh/logo.svg" /></a></div>
+		<div class="posfloatr" style="overflow:hidden; width:50%; margin-top:30px;">
+			<span style=" font-size:20px;display:block; float:right; margin-left:10px; line-height:48px;">全国咨询电话：4000-150-170</span>
+			<div style="float:right;"><img src="http://liuxue.sakurajp.com.cn/free/images/phoneicon.png" /></div>
+			<a href="/" style="float:right;line-height: 52px;margin-right: 15px;font-size:26px;">首页</a>
+		</div>
+	</div>
+	<div style="background:#f7d741; height:6px;"></div>
+	<div class="main">
+		<div id="banner" style="background:url(/files/newzh/banner.jpg) no-repeat top center; width:100%; height:497px;">
+			<div style="width:1210px; margin:0 auto; overflow:hidden;">
+				<div class="posfloatl" style="margin-top:325px; display:block; background:url(http://liuxue.sakurajp.com.cn/free/images/liuxuezhan_bg03.png); width:640px;color:#fff;">
+					<div style="margin-left:20px;margin-top:20px;">
+						<p style="margin-bottom:10px;"><b style="margin-right:20px;">近期展会：天津 </b>展会地点:金皇大酒店（河西区 南京路18号）<br>展会时间：2017年11月5日（周日）  14:00 开始</p>
+					</div>
+				</div>
+				<div class="posfloatr" style="background:#fff; margin-top:100px; width:320px; height:380px; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;">
+					<p style="font-size:22px;margin:20px;margin-left:50px;">现场领取名校OFFER</p>
+					<form id="form01" class="form01" style="width:260px; margin:0 auto;">
+						<div class="zt01" style="margin-bottom:20px;">姓名：<input id="names" maxlength="20" name="names" msg="中文名字不能为空!" datatype="Require" class="bgcl" /></div>
+						<div class="zt01" style="margin-bottom:20px;">手机：<input id="mb" maxlength="20" name="mb" msg="联系方式不能为空!" datatype="Require" class="bgcl" /></div>
+						<div class="zt01" style="margin-bottom:20px;">城市：<select id="area" name="area" class="bgcl" style="width:195px;">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<option selected="" value="">选择城市</option>
+<option value="">-----华东区-----</option>
+	  <option value="上海">上海</option>
+	  <option value="杭州">杭州</option>
+	  <option value="宁波">宁波</option>
+	  <option value="苏州">苏州</option>
+	  <option value="无锡">无锡</option>
+	  <option value="南京">南京</option>
+	  <option value="南通">南通</option>
+	  <option value="昆山">昆山</option>
+	  <option value="扬州">扬州</option>
+	  <option value="常州">常州</option>
+	  <option value="温州">温州</option>
+	  <option value="常熟">常熟</option>
+<option value="">-----华南区-----</option>
+	  <option value="广州">广州</option>
+	  <option value="深圳">深圳</option>
+	  <option value="佛山">佛山</option>
+	  <option value="福州">福州</option>
+	  <option value="厦门">厦门</option>
+ <option value="">-----华北区-----</option>
+	  <option value="北京">北京</option>
+	  <option value="天津">天津</option>
+	  <option value="大连">大连</option>
+	  <option value="青岛">青岛</option>
+	  <option value="济南">济南</option>
+ <option value="">-----西南区-----</option>
+	  <option value="重庆">重庆</option>
+	  <option value="成都">成都</option>
+ <option value="">-----西北区-----</option>
+	  <option value="西安">西安</option>
+ <option value="">-----华中区-----</option>
+	  <option value="武汉">武汉</option>
+	  <option value="武汉">武汉</option>
+	  <option value="长沙">长沙</option>
+ <option value="">----------</option>
+	  <option value="其他">其他</option>
+</select></div>
+						<div><input type="button" onclick="ajaxSubmit()" id="btn" name="btn" value=" " class="btn" /></div>
+					</form>
+					<script type="text/javascript">
+
+					function ajaxSubmit()
+					{
+						var name = $('#names').val();
+						var tel = $('#mb').val();
+						var area = $('#area').val();
+						if(name == ''){
+							alert('请填写姓名');
+							return false;
+						}
+						if(tel.length==0)
+						{
+							alert('请输入有效的手机号码！');
+							return false;
+						}
+						var myreg = /1[3-8]+\d{9}/;
+						if(!myreg.test(tel))
+						{
+							alert('请输入有效的手机号码！');
+							return false;
+						}
+						if( area == '' )
+						{
+							alert('请选择地区');
+							return false;
+						}
+						$("#btn").attr('disabled','disabled');
+						$.ajax({
+							headers: {
+						        'X-CSRF-Token': "{{ csrf_token('site') }}",
+						    },
+							url:"/ajaxindex",
+							data:
+							{
+								name:name,
+								tel:tel,
+								area:area,
+								from:location.href,
+							},
+							dataType:'JSON',
+							type:'POST',
+							success:function(e)
+							{
+								if( e.status == true )
+								{
+									alert('提交成功！请等待老师与您联系');
+									location.href="/";
+								}
+								else
+								{
+									alert(e.remark);
+								}
+							}
+						})
+					}
+
+					</script>
+					<a href="/pinggu">
+						<p style="font-size:16px;margin-left:28px;margin:20px;">免费留学评估 >></p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div><img src="/files/newzh/liuxuezhan_02.png" /></div>
+		<div><img src="/files/newzh/jiangshi.png" /></div>
+		<section class="part" style="margin-top: 2%" id="xingcheng">
+			<p class="introduction_title">展 会 行 程</p>
+
+			<div class="address clear">
+				<ul id="address" style="width:100%;">
+
+					<li>南昌 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">09月29日</span>
+						<div>
+							<p>南昌大学</p>
+						</div>
+					</li>
+					<li>太原 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月13日</span>
+						<div>
+							<p>山西大学</p>
+						</div>
+					</li>
+					<li>深圳 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月14日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>青岛 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月15日</span>
+						<div>
+							<p>青岛大学</p>
+						</div>
+					</li>
+					<li>上海 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月15日</span>
+						<div>
+							<p>上海外国语大学(松江校区)</p>
+						</div>
+					</li>
+					<li>南宁 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月15日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>大连 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月17日</span>
+						<div>
+							<p>大连外国语大学/大连理工大学</p>
+						</div>
+					</li>
+					<li>西安 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月18日</span>
+						<div>
+							<p>西安外国语大学/西安美术学院</p>
+						</div>
+					</li>
+					<li>成都 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月20日</span>
+						<div>
+							<p>四川外国语大学/成都理工大学/西南民大</p>
+						</div>
+					</li>
+					<li>南京 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月20日</span>
+						<div>
+							<p>南京邮电大学/南京农业大学/南京理工大学</p>
+						</div>
+					</li>
+					<li>杭州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月21日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>桂林 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月21日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>天津 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月22日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>重庆 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月24日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>长沙 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月25日</span>
+						<div>
+							<p>湖南大学</p>
+						</div>
+					</li>
+					<li>昆明 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月27日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>长春 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月28日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>广州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月29日</span>
+						<div>
+							<p>广东外语外贸大学</p>
+						</div>
+					</li>
+					<li>济南 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月29日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>镇江 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月30日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>合肥 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">10月31日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>武汉 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月04日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>苏州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月05日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>郑州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月11日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>厦门 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月12日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>开封 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月14日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>宁波 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月18日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>无锡 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月18日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>常州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月19日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>沈阳 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月19日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>佛山 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月25日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>温州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月26日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>哈尔滨 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">11月26日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>福州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月02日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>呼和浩特 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月03日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>洛阳 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月06日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>北京 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月10日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>烟台 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月15日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>贵阳 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月16日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>兰州 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月17日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>银川 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月19日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>网络场 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月20日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>珠海 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月23日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>威海 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月30日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+					<li>石家庄 <span class="zhanhui_time" style="display: inline-block;
+ !important;margin-top:-20px;">12月31日</span>
+						<div>
+							<p></p>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</section>
+
+		<div><img  style="margin-top:40px;" src="/files/newzh/liuxuezhan_04.png" /></div>
+	</div>
+
+	<div id="jchd" style="display:none; width:400px;">
+		<form id="form2" class="msgInfo" name="form2" method="post" action="/free/liuxuezhan.asp" onSubmit="return checkALL(this)">
+			<table width="240" border="0" align="center" cellpadding="0" cellspacing="0">
+				<tr>
+					<td height="30" align="right">姓名：</td>
+					<td align="left"><input name="names" type="text" class="wbk" /></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">手机：</td>
+					<td align="left"><input name="mb" type="text" class="wbk" /></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">城市：</td>
+					<td align="left"><select name="area" class="wbk">
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+						<option selected="">选择城市</option>
+				    	<option>-----华东区-----</option>
+							  <option>上海</option>
+							  <option>杭州</option>
+							  <option>宁波</option>
+							  <option>苏州</option>
+                              <option>无锡</option>
+                              <option>南京</option>
+							  <option>南通</option>
+							  <option>昆山</option>
+							  <option>扬州</option>
+							  <option>常州</option>
+							  <option>温州</option>
+							  <option>常熟</option>
+				   		<option>-----华南区-----</option>
+							  <option>广州</option>
+                              <option>深圳</option>
+							  <option>佛山</option>
+							  <option>福州</option>
+							  <option>厦门</option>
+                         <option>-----华北区-----</option>
+                              <option>北京</option>
+							  <option>天津</option>
+                              <option>大连</option>
+                              <option>青岛</option>
+							  <option>济南</option>
+						 <option>-----西南区-----</option>
+							  <option>重庆</option>
+							  <option>成都</option>
+                         <option>-----西北区-----</option>
+							  <option>西安</option>
+					     <option>-----华中区-----</option>
+							  <option>合肥</option>
+							  <option>武汉</option>
+							  <option>长沙</option>
+						 <option>----------</option>
+                              <option>其他</option>
+</select></td>
+				</tr>
+				<tr>
+					<td height="50" colspan="2" align="center"><input type="submit" name="Submit" class="form2_btn" value="提交注册" /></td>
+				</tr>
+			</table>
+		</form>
+
+		<div style="width:400px;">
+			<p style="width:300px; text-align:left; margin:0 auto;">活动礼品有限，立即注册，前100名注册更有神秘大礼</p>
+		</div>
+	</div>
+
+	</div>
+	<div style=" display:block;background:#F7F7F7;width:100%; height:100px;">
+	<div class="footer overflow" style="width:1000px; margin:0 auto; padding-top:30px;">
+        <div class="info posfloatr">
+            技术支持：湖南彩祥圆贸易有限公司.
+        </div>
+	</div>
+</div>
+	<script type="text/javascript">
+		$("#address").on('click', 'li', function() {
+			var p_text = $(this).find('div p').text();
+			if(p_text!== ""){
+				$(this).find("div").slideToggle();
+			}else{
+				return false;
+			}
+		});
+	</script>
+</body>
+
+</html>
